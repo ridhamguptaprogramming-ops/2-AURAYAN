@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURAYAN - Premium Luxury Fragrances | Shop Exclusive Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="collection.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <i class="fas fa-crown"></i> AURAYAN
+            </div>
+            <div class="navbar-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="navbar-right">
+                <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+                <button class="user-btn"><i class="fas fa-user"></i></button>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">AURAYAN</h1>
+            <p class="hero-subtitle">Experience Luxury Fragrance</p>
+            <p class="hero-description">Discover premium, hand-crafted fragrances that define elegance and sophistication</p>
+            <button class="hero-btn" id="exploreBtn">Explore Collection</button>
+        </div>
+        <div class="hero-background">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- Features Bar -->
+    <section class="features-bar">
+        <div class="features-container">
+            <div class="feature">
+                <i class="fas fa-leaf"></i>
+                <h3>100% Natural</h3>
+                <p>Premium ingredients</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-clock"></i>
+                <h3>Long Lasting</h3>
+                <p>8+ hours wear time</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-globe"></i>
+                <h3>Eco-Friendly</h3>
+                <p>Sustainable packaging</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-award"></i>
+                <h3>Award Winning</h3>
+                <p>International recognition</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="section-container">
+            <h2 class="section-title">Our Collection</h2>
+            <p class="section-subtitle">Handcrafted luxury fragrances for the modern elegance</p>
+            
+            <!-- Filter Options -->
+            <div class="filter-section">
+                <div class="filter-group">
+                    <label for="categoryFilter">Category:</label>
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="all">All Products</option>
+                        <option value="oud">Oud Collection</option>
+                        <option value="floral">Floral Collection</option>
+                        <option value="woody">Woody Collection</option>
+                        <option value="fresh">Fresh Collection</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="priceFilter">Price Range:</label>
+                    <input type="range" id="priceFilter" min="500" max="5000" value="5000" class="filter-slider">
+                    <span id="priceDisplay">₹500 - ₹5000</span>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Product cards will be inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Modal/Lightbox -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-body">
+                <!-- Left Side: Image Gallery -->
+                <div class="modal-image-section">
+                    <div class="modal-main-image">
+                        <img id="modalMainImage" src="" alt="Product Image">
+                        <span class="modal-badge" id="modalBadge"></span>
+                    </div>
+                    
+                    <div class="modal-thumbnails">
+                        <button class="modal-thumbnail active" data-image="1">
+                            <img id="thumb1" src="" alt="Thumb 1">
+                        </button>
+                        <button class="modal-thumbnail" data-image="2">
+                            <img id="thumb2" src="" alt="Thumb 2">
+                        </button>
+                        <button class="modal-thumbnail" data-image="3">
+                            <img id="thumb3" src="" alt="Thumb 3">
+                        </button>
+                        <button class="modal-thumbnail" data-image="4">
+                            <img id="thumb4" src="" alt="Thumb 4">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Side: Product Details -->
+                <div class="modal-details-section">
+                    <div class="modal-header">
+                        <h1 id="modalProductName"></h1>
+                        <p id="modalProductSubtitle" class="product-subtitle"></p>
+                    </div>
+
+                    <!-- Rating -->
+                    <div class="modal-rating">
+                        <span id="modalStars" class="stars"></span>
+                        <span id="modalReviewCount" class="review-count"></span>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="modal-price-section">
+                        <span id="modalCurrentPrice" class="current-price"></span>
+                        <span id="modalOriginalPrice" class="original-price"></span>
+                        <span id="modalDiscount" class="discount-badge"></span>
+                    </div>
+
+                    <!-- Description -->
+                    <p id="modalDescription" class="modal-description"></p>
+
+                    <!-- Fragrance Profile -->
+                    <div class="modal-profile">
+                        <h3>Fragrance Profile</h3>
+                        <div class="profile-cards">
+                            <div class="profile-card">
+                                <h4>Top Notes</h4>
+                                <p id="modalTopNotes"></p>
+                            </div>
+                            <div class="profile-card">
+                                <h4>Heart Notes</h4>
+                                <p id="modalHeartNotes"></p>
+                            </div>
+                            <div class="profile-card">
+                                <h4>Base Notes</h4>
+                                <p id="modalBaseNotes"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specifications -->
+                    <div class="modal-specs">
+                        <h3>Product Specifications</h3>
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Type:</span>
+                                <span id="modalType" class="spec-value"></span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Volume:</span>
+                                <span id="modalVolume" class="spec-value">100ml</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Occasion:</span>
+                                <span id="modalOccasion" class="spec-value"></span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Longevity:</span>
+                                <span id="modalLongevity" class="spec-value">8+ Hours</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Projection:</span>
+                                <span id="modalProjection" class="spec-value">Strong</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">For:</span>
+                                <span id="modalFor" class="spec-value">All Skin Types</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quantity & Actions -->
+                    <div class="modal-quantity">
+                        <label>Quantity:</label>
+                        <div class="qty-control">
+                            <button class="qty-btn" id="qtyMinus">−</button>
+                            <input type="number" id="modalQty" value="1" min="1" max="10">
+                            <button class="qty-btn" id="qtyPlus">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="modal-actions">
+                        <button class="btn-wishlist" id="modalWishlistBtn">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                        <button class="btn-cart" id="modalAddCartBtn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="modal-trust-badges">
+                        <div class="trust-badge">
+                            <i class="fas fa-truck"></i>
+                            <span>Free Shipping over ₹2000</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-undo"></i>
+                            <span>15-Day Returns</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Authentic</span>
+                        </div>
+                    </div>
+
+                    <!-- Customer Reviews Preview -->
+                    <div class="modal-reviews">
+                        <h3>Customer Reviews</h3>
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <strong>Rahul Kumar</strong>
+                                    <span class="review-stars">★★★★★</span>
+                                </div>
+                                <p>"Absolutely amazing fragrance! Worth every penny."</p>
+                            </div>
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <strong>Priya Singh</strong>
+                                    <span class="review-stars">★★★★★</span>
+                                </div>
+                                <p>"Luxurious and long-lasting. Highly recommended!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>AURAYAN</h4>
+                <p>Premium luxury fragrances for the modern elegance.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AURAYAN Luxury Fragrances. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <script src="collection.js"></script>
+</body>
+</html>
