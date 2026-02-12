@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact AURAYAN - Premium Luxury Fragrance. Get in touch with our team for inquiries, support, and orders.">
+<meta name="keywords" content="contact AURAYAN, customer support, fragrance inquiry, luxury perfume support">
+<meta property="og:title" content="Contact AURAYAN | Luxury Fragrance">
+<meta property="og:description" content="Reach out to AURAYAN for customer support and inquiries">
+
+<title>Contact AURAYAN | Luxury Fragrance</title>
+
+<link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="contact.css">
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+</head>
+<body>
+
+<!-- HEADER & NAVBAR -->
+<header role="banner">
+<nav role="navigation" aria-label="Main navigation" class="navbar">
+<div class="nav-container">
+<div class="logo" aria-label="AURAYAN - Go to homepage">
+<a href="index.html">AURAYAN</a>
+</div>
+
+<button class="hamburger" aria-label="Toggle navigation menu" id="hamburger-menu">
+<span></span><span></span><span></span>
+</button>
+
+<div class="nav-links" id="nav-menu">
+<a href="index.html" class="nav-link">Home</a>
+<a href="collection.html" class="nav-link">Collection</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="contact.html" class="nav-link active">Contact</a>
+</div>
+
+<div class="nav-icons">
+<button class="icon-btn" aria-label="Search" id="search-btn">
+<i class="fas fa-search"></i>
+</button>
+<button class="icon-btn" aria-label="User account" id="user-btn">
+<i class="fas fa-user"></i>
+</button>
+<button class="icon-btn cart-btn" aria-label="Shopping cart" id="cart-btn">
+<i class="fas fa-shopping-cart"></i>
+<span class="cart-count" id="cartCount">0</span>
+</button>
+</div>
+</div>
+</nav>
+</header>
+
+<!-- CONTACT HERO -->
+<section class="contact-hero" aria-labelledby="contact-title">
+<div class="hero-content">
+<h1 id="contact-title">Get In Touch</h1>
+<p class="hero-subtitle">We'd love to hear from you. Reach out with any questions or inquiries.</p>
+<div class="breadcrumb">
+<a href="index.html">Home</a> / <span>Contact</span>
+</div>
+</div>
+</section>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+
+<!-- QUICK CONTACT INFO -->
+<section class="quick-contact" aria-label="Quick contact options">
+<div class="quick-contact-container">
+<div class="quick-contact-item">
+<div class="icon-circle">
+<i class="fas fa-envelope"></i>
+</div>
+<h3>Email Us</h3>
+<p>support@aurayan.com</p>
+<a href="mailto:support@aurayan.com" class="contact-link">Send Email</a>
+</div>
+
+<div class="quick-contact-item">
+<div class="icon-circle">
+<i class="fas fa-phone"></i>
+</div>
+<h3>Call Us</h3>
+<p>+91 98765 43210</p>
+<a href="tel:+919876543210" class="contact-link">Call Now</a>
+</div>
+
+<div class="quick-contact-item">
+<div class="icon-circle">
+<i class="fas fa-map-marker-alt"></i>
+</div>
+<h3>Visit Us</h3>
+<p>Mumbai, India</p>
+<a href="#location" class="contact-link">View Location</a>
+</div>
+
+<div class="quick-contact-item">
+<div class="icon-circle">
+<i class="fas fa-clock"></i>
+</div>
+<h3>Business Hours</h3>
+<p>Mon - Fri: 9 AM - 6 PM IST</p>
+<p style="font-size: 0.85rem; color: #999; margin-top: 0.5rem;">Sat - Sun: 10 AM - 4 PM IST</p>
+</div>
+</div>
+</section>
+
+<!-- SUPPORT CHANNELS -->
+<section class="support-channels" aria-label="Different support channels">
+<div class="channels-container">
+<h2>How We Can Help</h2>
+<p class="section-subtitle">Choose your preferred way to connect with us</p>
+
+<div class="channels-grid">
+<div class="channel-card">
+<div class="channel-icon">
+<i class="fas fa-comments"></i>
+</div>
+<h3>Live Chat</h3>
+<p>Chat with our team in real-time</p>
+<p class="channel-time">Available: Mon-Fri 9 AM - 6 PM</p>
+<button class="btn btn-secondary" onclick="openLiveChat()">Start Chat</button>
+</div>
+
+<div class="channel-card">
+<div class="channel-icon">
+<i class="fas fa-envelope"></i>
+</div>
+<h3>Email Support</h3>
+<p>Send us a detailed message</p>
+<p class="channel-time">Response: Within 24 hours</p>
+<a href="#contact-form" class="btn btn-secondary">Send Email</a>
+</div>
+
+<div class="channel-card">
+<div class="channel-icon">
+<i class="fas fa-phone-alt"></i>
+</div>
+<h3>Phone Support</h3>
+<p>Speak directly with our team</p>
+<p class="channel-time">Available: Mon-Fri 9 AM - 6 PM</p>
+<a href="tel:+919876543210" class="btn btn-secondary">Call Now</a>
+</div>
+
+<div class="channel-card">
+<div class="channel-icon">
+<i class="fas fa-comments-dollar"></i>
+</div>
+<h3>WhatsApp Support</h3>
+<p>Quick support via WhatsApp</p>
+<p class="channel-time">Available: 24/7</p>
+<a href="https://wa.me/919876543210" target="_blank" class="btn btn-secondary">Message Us</a>
+</div>
+</div>
+</section>
+
+<!-- MAIN CONTACT SECTION -->
+<section class="contact-section" aria-label="Contact form and information" id="contact-form">
+<div class="contact-container">
+
+<!-- CONTACT FORM -->
+<div class="contact-card form-card">
+<h2>Send Us a Message</h2>
+<p class="card-subtitle">We'll get back to you within 24 hours</p>
+
+<form id="contactForm" class="contact-form" novalidate>
+<!-- Name Field -->
+<div class="form-group">
+<label for="name">Full Name *</label>
+<input type="text" id="name" name="name" placeholder="Enter your name" required>
+<span class="error-message" id="nameError"></span>
+</div>
+
+<!-- Email Field -->
+<div class="form-group">
+<label for="email">Email Address *</label>
+<input type="email" id="email" name="email" placeholder="Enter your email" required>
+<span class="error-message" id="emailError"></span>
+</div>
+
+<!-- Phone Field -->
+<div class="form-group">
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+</div>
+
+<!-- Subject Field -->
+<div class="form-group">
+<label for="subject">Subject *</label>
+<select id="subject" name="subject" required>
+<option value="">Select a subject</option>
+<option value="General Inquiry">General Inquiry</option>
+<option value="Product Question">Product Question</option>
+<option value="Order Status">Order Status</option>
+<option value="Returns & Refunds">Returns & Refunds</option>
+<option value="Fragrance Consultation">Fragrance Consultation</option>
+<option value="Wholesale Inquiry">Wholesale Inquiry</option>
+<option value="Partnership">Partnership Opportunity</option>
+<option value="Bug Report">Technical Issue</option>
+<option value="Other">Other</option>
+</select>
+<span class="error-message" id="subjectError"></span>
+</div>
+
+<!-- Priority Field -->
+<div class="form-group">
+<label for="priority">Priority</label>
+<select id="priority" name="priority">
+<option value="normal">Normal</option>
+<option value="urgent">Urgent</option>
+</select>
+</div>
+
+<!-- Message Field -->
+<div class="form-group">
+<label for="message">Message *</label>
+<textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+<span class="char-count"><span id="charCount">0</span>/500</span>
+<span class="error-message" id="messageError"></span>
+</div>
+
+<!-- File Upload (Optional) -->
+<div class="form-group">
+<label for="attachment">Attachment (Optional)</label>
+<div class="file-upload">
+<input type="file" id="attachment" name="attachment" accept="image/*,.pdf,.doc,.docx">
+<span class="file-hint">Max 5MB - Images, PDF, or Document</span>
+</div>
+</div>
+
+<!-- Newsletter Checkbox -->
+<div class="form-group checkbox">
+<input type="checkbox" id="newsletter" name="newsletter" value="yes">
+<label for="newsletter" class="checkbox-label">Subscribe to our newsletter for exclusive offers and updates</label>
+</div>
+
+<!-- Terms Checkbox -->
+<div class="form-group checkbox">
+<input type="checkbox" id="terms" name="terms" value="yes" required>
+<label for="terms" class="checkbox-label">I agree to the <a href="#" target="_blank">privacy policy</a> *</label>
+</div>
+
+<!-- Submit Button -->
+<button type="submit" class="btn btn-primary btn-submit">
+<span class="btn-text">Send Message</span>
+<i class="fas fa-arrow-right"></i>
+</button>
+
+<!-- Success Message -->
+<div class="success-message" id="successMsg" style="display: none;">
+<i class="fas fa-check-circle"></i>
+<p>Thank you! Your message has been sent successfully. We'll get back to you soon.</p>
+</div>
+
+<!-- Error Message -->
+<div class="error-alert" id="errorAlert" style="display: none;">
+<i class="fas fa-exclamation-circle"></i>
+<p id="errorText"></p>
+</div>
+</form>
+</div>
+
+<!-- CONTACT INFO CARD -->
+<div class="contact-card info-card">
+<h2>Contact Information</h2>
+
+<div class="info-block">
+<h3>Headquarters</h3>
+<div class="info-item">
+<i class="fas fa-map-marker-alt"></i>
+<div>
+<strong>Address</strong>
+<p>AURAYAN Luxury Fragrance<br>Mumbai, Maharashtra 400001<br>India</p>
+</div>
+</div>
+</div>
+
+<div class="info-block">
+<h3>Get In Touch</h3>
+<div class="info-item">
+<i class="fas fa-phone"></i>
+<div>
+<strong>Phone</strong>
+<p><a href="tel:+919876543210">+91 98765 43210</a></p>
+<p style="font-size: 0.85rem; color: #999; margin-top: 0.3rem;">Mon-Fri: 9 AM - 6 PM IST</p>
+</div>
+</div>
+<div class="info-item">
+<i class="fas fa-envelope"></i>
+<div>
+<strong>Email</strong>
+<p><a href="mailto:support@aurayan.com">support@aurayan.com</a><br><a href="mailto:orders@aurayan.com">orders@aurayan.com</a></p>
+</div>
+</div>
+<div class="info-item">
+<i class="fab fa-whatsapp"></i>
+<div>
+<strong>WhatsApp</strong>
+<p><a href="https://wa.me/919876543210" target="_blank">+91 98765 43210</a></p>
+<p style="font-size: 0.85rem; color: #999; margin-top: 0.3rem;">Available 24/7</p>
+</div>
+</div>
+</div>
+
+<div class="info-block">
+<h3>Business Hours</h3>
+<div class="info-item">
+<i class="fas fa-clock"></i>
+<div>
+<strong>Monday - Friday</strong>
+<p>9:00 AM - 6:00 PM IST</p>
+<strong style="margin-top: 0.5rem; display: block;">Saturday - Sunday</strong>
+<p>10:00 AM - 4:00 PM IST</p>
+<p style="font-size: 0.85rem; color: #999; margin-top: 0.5rem;">*Holidays: Closed</p>
+</div>
+</div>
+</div>
+
+<div class="info-block">
+<h3>Department Contacts</h3>
+<div class="info-item">
+<i class="fas fa-users"></i>
+<div>
+<strong>Sales & Orders</strong>
+<p><a href="mailto:sales@aurayan.com">sales@aurayan.com</a></p>
+</div>
+</div>
+<div class="info-item">
+<i class="fas fa-redo"></i>
+<div>
+<strong>Returns & Refunds</strong>
+<p><a href="mailto:returns@aurayan.com">returns@aurayan.com</a></p>
+</div>
+</div>
+<div class="info-item">
+<i class="fas fa-handshake"></i>
+<div>
+<strong>Wholesale & Partners</strong>
+<p><a href="mailto:wholesale@aurayan.com">wholesale@aurayan.com</a></p>
+</div>
+</div>
+</div>
+
+<div class="info-block">
+<h3>Follow Us</h3>
+<div class="social-icons">
+<a href="https://facebook.com/aurayan" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+<i class="fab fa-facebook"></i>
+</a>
+<a href="https://instagram.com/aurayan" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="https://twitter.com/aurayan" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Twitter">
+<i class="fab fa-twitter"></i>
+</a>
+<a href="https://youtube.com/aurayan" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+<i class="fab fa-youtube"></i>
+</a>
+<a href="https://tiktok.com/@aurayan" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok">
+<i class="fab fa-tiktok"></i>
+</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- RESPONSE TIME GUARANTEE -->
+<section class="response-guarantee" aria-label="Response time guarantee">
+<div class="guarantee-container">
+<h2>Our Support Promise</h2>
+<div class="guarantee-grid">
+<div class="guarantee-item">
+<div class="guarantee-icon">⚡</div>
+<h3>24-Hour Response</h3>
+<p>We respond to all inquiries within 24 hours</p>
+</div>
+<div class="guarantee-item">
+<div class="guarantee-icon">✓</div>
+<h3>Expert Team</h3>
+<p>Trained specialists ready to help you</p>
+</div>
+<div class="guarantee-item">
+<div class="guarantee-icon">🎯</div>
+<h3>Problem Solving</h3>
+<p>We find solutions, not excuses</p>
+</div>
+<div class="guarantee-item">
+<div class="guarantee-icon">😊</div>
+<h3>100% Satisfaction</h3>
+<p>Your happiness is our priority</p>
+</div>
+</div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section" aria-labelledby="faq-title">
+<div class="faq-container">
+<h2 id="faq-title">Frequently Asked Questions</h2>
+<p class="section-subtitle">Find answers to common questions</p>
+
+<div class="faq-tabs">
+<button class="faq-tab-btn active" onclick="filterFAQ('all')">All</button>
+<button class="faq-tab-btn" onclick="filterFAQ('shipping')">Shipping</button>
+<button class="faq-tab-btn" onclick="filterFAQ('returns')">Returns</button>
+<button class="faq-tab-btn" onclick="filterFAQ('products')">Products</button>
+</div>
+
+<div class="faq-grid">
+<details class="faq-item" data-category="all shipping">
+<summary>
+<span>How long does shipping take?</span>
+<i class="fas fa-chevron-down"></i>
+</summary>
+<p>Standard shipping within India takes 3-5 business days. Express shipping is available for orders over ₹2,000 with 1-2 business day delivery. International shipping is also available with estimated delivery of 7-14 business days depending on location.</p>
+</details>
+
+<details class="faq-item" data-category="all returns">
+<summary>
+<span>What is your return policy?</span>
+<i class="fas fa-chevron-down"></i>
+</summary>
+<p>We offer a 30-day money-back guarantee on all purchases. If you're not satisfied with your fragrance, you can return it within 30 days of purchase for a full refund. The product must be unused and in original packaging.</p>
+</details>
+
+<details class="faq-item" data-category="all returns">
+<summary>
+<span>Can I exchange my fragrance for a different one?</span>
+<i class="fas fa-chevron-down"></i>
+</summary>
+<p>Yes, we offer free exchanges within 14 days of purchase. The product must be unused and in original condition. Simply contact our customer support team to initiate an exchange.</p>
+</details>
+
+<details class="faq-item" data-category="all products">
+<summary>
+<span>Do you offer samples or testers?</span>
+<i class="fas fa-chevron-down"></i>
+</summary>
+<p>Absolutely! We offer fragrance sample sets so you can try different scents before committing to a full bottle. Sample sets are available for purchase at a discounted price.</p>
+</details>
+
+<details class="faq-item" data-category="all products">
+<summary>
+<span>Are your products authentic?</span>
+<i class="fas fa-chevron-down"></i>
+</summary>
+<p>Yes, all AURAYAN products are 100% authentic and crafted with premium ingredients. We use only ethically sourced, high-quality components and follow international standards for fragrance production.</p>
+</details>
+
+<details class="faq-item" data-category="all shipping">
+<summary>
+<span>Do you offer international shipping?</span>
+<i class="fas fa-chevron-down"></i>
+</summary>
+<p>Yes, we ship to 50+ countries worldwide. International shipping typically takes 7-14 business days. Shipping costs vary by location and order value.</p>
+</details>
+
+<details class="faq-item" data-category="all products">
+<summary>
+<span>Can I purchase wholesale?</span>
+<i class="fas fa-chevron-down"></i>
+</summary>
+<p>Yes, we offer wholesale and bulk purchase options for retailers and resellers. Please contact our wholesale team at wholesale@aurayan.com for pricing and availability.</p>
+</details>
+
+<details class="faq-item" data-category="all products">
+<summary>
+<span>How should I store my fragrance?</span>
+<i class="fas fa-chevron-down"></i>
+</summary>
+<p>Store your fragrance in a cool, dark place away from direct sunlight and heat. Keep the bottle tightly sealed to prevent evaporation. Avoid storing in bathrooms as humidity can affect the fragrance.</p>
+</details>
+</div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section class="testimonials-section" aria-labelledby="testimonials-title">
+<div class="testimonials-container">
+<h2 id="testimonials-title">What Our Customers Say</h2>
+<p class="section-subtitle">Real feedback from our AURAYAN community</p>
+
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<div class="rating">
+<span class="stars">★★★★★</span>
+<span class="date">2 weeks ago</span>
+</div>
+<p class="testimonial-text">"The customer service was exceptional. I had a question about which fragrance to choose, and the team helped me find the perfect match. Absolutely recommended!"</p>
+<div class="testimonial-author-info">
+<img src="https://i.pravatar.cc/40?img=1" alt="Priya Sharma">
+<div>
+<p class="name">Priya Sharma</p>
+<p class="location">Delhi, India</p>
+</div>
+</div>
+</div>
+
+<div class="testimonial-card">
+<div class="rating">
+<span class="stars">★★★★★</span>
+<span class="date">1 month ago</span>
+</div>
+<p class="testimonial-text">"I reached out with a delivery issue and they resolved it within hours. AURAYAN's support team really cares about customer satisfaction."</p>
+<div class="testimonial-author-info">
+<img src="https://i.pravatar.cc/40?img=2" alt="Arun Kumar">
+<div>
+<p class="name">Arun Kumar</p>
+<p class="location">Mumbai, India</p>
+</div>
+</div>
+</div>
+
+<div class="testimonial-card">
+<div class="rating">
+<span class="stars">★★★★★</span>
+<span class="date">3 weeks ago</span>
+</div>
+<p class="testimonial-text">"Outstanding experience from start to finish. Fast delivery, beautiful packaging, and amazing fragrances. Will definitely order again!"</p>
+<div class="testimonial-author-info">
+<img src="https://i.pravatar.cc/40?img=3" alt="Anjali Singh">
+<div>
+<p class="name">Anjali Singh</p>
+<p class="location">Bangalore, India</p>
+</div>
+</div>
+</div>
+
+<div class="testimonial-card">
+<div class="rating">
+<span class="stars">★★★★★</span>
+<span class="date">1 month ago</span>
+</div>
+<p class="testimonial-text">"Premium quality at reasonable prices. The fragrance longevity is incredible. Best purchase I've made this year!"</p>
+<div class="testimonial-author-info">
+<img src="https://i.pravatar.cc/40?img=4" alt="Vikram Singh">
+<div>
+<p class="name">Vikram Singh</p>
+<p class="location">Pune, India</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="testimonials-cta">
+<p>Have you used AURAYAN? <a href="#contact-form">Share your experience</a> with us!</p>
+</div>
+</section>
+
+<!-- MAP SECTION -->
+<section class="map-section" id="location" aria-label="Location map">
+<div class="map-container">
+<h2>Visit Our Studio</h2>
+<p class="map-subtitle">We're located in the heart of Mumbai</p>
+<div class="map-wrapper">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.6246890852857!2d72.82765!3d19.07283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8b5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<p class="map-note">📍 Currently available for orders online. Visit by appointment only. <a href="#contact-form">Book an appointment</a></p>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo" class="footer">
+<div class="footer-container">
+<div class="footer-section">
+<h3>AURAYAN</h3>
+<p>Premium luxury fragrance for modern royalty.</p>
+<div class="social-links">
+<a href="https://facebook.com/aurayan" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+<i class="fab fa-facebook"></i>
+</a>
+<a href="https://instagram.com/aurayan" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="https://twitter.com/aurayan" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+<i class="fab fa-twitter"></i>
+</a>
+</div>
+</div>
+
+<div class="footer-section">
+<h4>Shop</h4>
+<ul>
+<li><a href="collection.html">Collection</a></li>
+<li><a href="#">New Arrivals</a></li>
+<li><a href="#">Best Sellers</a></li>
+<li><a href="#">Gift Sets</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h4>Support</h4>
+<ul>
+<li><a href="contact.html">Contact Us</a></li>
+<li><a href="#">Track Order</a></li>
+<li><a href="#">Returns & Exchanges</a></li>
+<li><a href="#">FAQ</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h4>Legal</h4>
+<ul>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms of Service</a></li>
+<li><a href="#">Shipping Info</a></li>
+</ul>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>&copy; 2026 AURAYAN Luxury Fragrance. All Rights Reserved.</p>
+</div>
+</footer>
+
+<!-- LIVE CHAT WIDGET -->
+<div class="chat-widget" id="chatWidget">
+<div class="chat-button" onclick="toggleChat()">
+<i class="fas fa-comments"></i>
+<span class="chat-badge">1</span>
+</div>
+<div class="chat-box" id="chatBox">
+<div class="chat-header">
+<h4>Chat with us</h4>
+<button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+</div>
+<div class="chat-messages" id="chatMessages">
+<div class="message bot-message">
+<p>👋 Hi! How can we help you today?</p>
+</div>
+</div>
+<div class="chat-input">
+<input type="text" placeholder="Type your message..." id="chatInput" onkeypress="handleChatInput(event)">
+<button onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+</div>
+</div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="contact.js" defer></script>
+
+</body>
+</html>
