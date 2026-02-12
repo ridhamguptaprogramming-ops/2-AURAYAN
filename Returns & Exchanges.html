@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AURAYAN Returns & Exchanges - Easy 30-day returns and free exchanges on luxury fragrances with hassle-free process.">
+<meta name="keywords" content="returns, exchanges, refunds, return policy, exchange policy, AURAYAN fragrance">
+<meta property="og:title" content="Returns & Exchanges | AURAYAN">
+<meta property="og:description" content="Simple and hassle-free returns and exchanges for AURAYAN fragrances">
+
+<title>Returns & Exchanges | AURAYAN</title>
+
+<!-- STYLESHEETS -->
+<link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  /* RETURNS & EXCHANGES PAGE STYLES */
+  :root {
+    --primary-color: #C6A14A;
+    --primary-dark: #A68336;
+    --secondary-color: #1a1a1a;
+    --text-dark: #2a2a2a;
+    --text-light: #666666;
+    --bg-light: #f9f9f9;
+    --bg-white: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 10px 32px rgba(0, 0, 0, 0.18);
+  }
+
+  /* HERO SECTION */
+  .hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    padding: 6rem 2rem;
+    position: relative;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(198,161,74,0.1)" stroke-width="0.5"/></svg>');
+    opacity: 0.08;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInDown 0.8s ease-out;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    color: #ddd;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* CONTAINER */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  /* TABS */
+  .tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid var(--border-color);
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    position: relative;
+    bottom: -2px;
+  }
+
+  .tab-btn:hover {
+    color: var(--primary-color);
+  }
+
+  .tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+  }
+
+  /* TAB CONTENT */
+  .tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  /* GUARANTEE BANNER */
+  .guarantee-banner {
+    background: linear-gradient(135deg, #C6A14A 0%, #A68336 100%);
+    color: white;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .guarantee-banner h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+  }
+
+  .guarantee-banner p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  /* FEATURES GRID */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+  }
+
+  .feature-card p {
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* COMPARISON TABLE */
+  .comparison-table {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .comparison-table th {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .comparison-table td {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-light);
+  }
+
+  .comparison-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .comparison-table tbody tr:hover {
+    background: var(--bg-light);
+  }
+
+  .checkmark {
+    color: #4caf50;
+    font-weight: bold;
+  }
+
+  .cross {
+    color: #ff6b6b;
+    font-weight: bold;
+  }
+
+  /* PROCESS SECTION */
+  .process-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 3rem;
+  }
+
+  .process-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--bg-light);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+  }
+
+  .step:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .step-content h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-dark);
+  }
+
+  .step-content p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.95rem;
+  }
+
+  /* FORM SECTION */
+  .form-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 3rem;
+  }
+
+  .form-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(198, 161, 74, 0.1);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .checkbox-group input {
+    width: auto;
+    margin: 0;
+  }
+
+  .submit-btn {
+    padding: 1.2rem 2.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  .submit-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* CONDITIONS SECTION */
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .condition-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid;
+  }
+
+  .condition-card.acceptable {
+    border-left-color: #4caf50;
+  }
+
+  .condition-card.acceptable .condition-icon {
+    color: #4caf50;
+  }
+
+  .condition-card.unacceptable {
+    border-left-color: #ff6b6b;
+  }
+
+  .condition-card.unacceptable .condition-icon {
+    color: #ff6b6b;
+  }
+
+  .condition-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .condition-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-dark);
+  }
+
+  .condition-card p {
+    margin: 0;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* FAQ SECTION */
+  .faq-section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 3rem;
+  }
+
+  .faq-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+  }
+
+  .faq-item {
+    margin-bottom: 1rem;
+  }
+
+  .faq-question {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    user-select: none;
+  }
+
+  .faq-question:hover {
+    background: #f0f0f0;
+  }
+
+  .faq-question h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-dark);
+  }
+
+  .faq-icon {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    display: none;
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    color: var(--text-light);
+    line-height: 1.8;
+  }
+
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  /* SUCCESS MESSAGE */
+  .success-message {
+    display: none;
+    background: #f0fdf4;
+    border: 2px solid #4caf50;
+    border-radius: 8px;
+    padding: 1.5rem;
+    color: #2d5016;
+    margin-bottom: 2rem;
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .success-message.show {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .success-message i {
+    font-size: 1.5rem;
+    color: #4caf50;
+  }
+
+  /* CONTACT SECTION */
+  .contact-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .contact-section h2 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .contact-section p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #ddd;
+  }
+
+  .contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-btn {
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .contact-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  .contact-btn.secondary {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+
+  .contact-btn.secondary:hover {
+    background: var(--primary-color);
+    color: white;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: #1a1a1a;
+    color: #aaa;
+    padding: 3rem 2rem;
+    border-top: 1px solid #333;
+    margin-top: 3rem;
+  }
+
+  .footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-section h3,
+  .footer-section h4 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section ul {
+    list-style: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section a {
+    color: #aaa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .footer-section a:hover {
+    color: var(--primary-color);
+  }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 2rem;
+    color: #666;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .table-wrapper {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 3rem 1rem;
+    }
+
+    .container {
+      padding: 2rem 1rem;
+    }
+
+    .tabs {
+      gap: 0.5rem;
+    }
+
+    .tab-btn {
+      padding: 0.8rem 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .form-section,
+    .process-section,
+    .faq-section,
+    .contact-section {
+      padding: 2rem 1.5rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .conditions-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+    }
+
+    .step {
+      gap: 1rem;
+    }
+
+    .contact-buttons {
+      flex-direction: column;
+    }
+
+    .contact-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    .guarantee-banner h2 {
+      font-size: 1.5rem;
+    }
+
+    .tabs {
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      padding: 0.8rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-size: 16px;
+    }
+  }
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER & NAVBAR -->
+<header role="banner">
+<nav role="navigation" aria-label="Main navigation" class="navbar">
+<div class="nav-container">
+<div class="logo">
+<a href="index.html">AURAYAN</a>
+</div>
+
+<button class="hamburger" id="hamburger-menu" aria-label="Toggle menu">
+<span></span><span></span><span></span>
+</button>
+
+<div class="nav-links" id="nav-menu">
+<a href="index.html" class="nav-link">Home</a>
+<a href="collection-new.html" class="nav-link">Collection</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="contact.html" class="nav-link">Contact</a>
+</div>
+
+<div class="nav-icons">
+<button class="icon-btn">
+<i class="fas fa-search"></i>
+</button>
+<button class="icon-btn">
+<i class="fas fa-user"></i>
+</button>
+<button class="icon-btn cart-btn">
+<i class="fas fa-shopping-cart"></i>
+<span class="cart-count">0</span>
+</button>
+</div>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+<h1>Returns & Exchanges</h1>
+<p>Hassle-free returns and exchanges with our 30-day guarantee and free exchange program</p>
+</section>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+<div class="container">
+
+<!-- GUARANTEE BANNER -->
+<div class="guarantee-banner">
+<h2>30-Day Money-Back Guarantee + Free Exchanges</h2>
+<p>Not satisfied? Get a full refund or exchange for free within 30 days - no questions asked</p>
+</div>
+
+<!-- TABS -->
+<div class="tabs" role="tablist">
+<button class="tab-btn active" onclick="switchTab(event, 'returns')" role="tab" aria-selected="true">Returns</button>
+<button class="tab-btn" onclick="switchTab(event, 'exchanges')" role="tab" aria-selected="false">Exchanges</button>
+<button class="tab-btn" onclick="switchTab(event, 'comparison')" role="tab" aria-selected="false">Compare</button>
+</div>
+
+<!-- RETURNS TAB -->
+<div id="returns" class="tab-content active">
+
+<!-- FEATURES -->
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">💰</div>
+<h3>Full Refund</h3>
+<p>Get 100% of your money back within 5-7 business days</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🚚</div>
+<h3>Free Returns</h3>
+<p>Prepaid return shipping label - no cost to you</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📦</div>
+<h3>30-Day Window</h3>
+<p>Full 30 days from purchase to initiate returns</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">✓</div>
+<h3>Simple Process</h3>
+<p>4 easy steps to get your refund</p>
+</div>
+</div>
+
+<!-- PROCESS -->
+<div class="process-section">
+<h2>How to Return</h2>
+<div class="process-steps">
+<div class="step">
+<div class="step-number">1</div>
+<div class="step-content">
+<h3>Contact Support</h3>
+<p>Email returns@aurayan.com with your order number and reason for return</p>
+</div>
+</div>
+<div class="step">
+<div class="step-number">2</div>
+<div class="step-content">
+<h3>Get Return Label</h3>
+<p>We'll send you a free prepaid return shipping label</p>
+</div>
+</div>
+<div class="step">
+<div class="step-number">3</div>
+<div class="step-content">
+<h3>Ship It Back</h3>
+<p>Pack your item securely and drop it off at any courier</p>
+</div>
+</div>
+<div class="step">
+<div class="step-number">4</div>
+<div class="step-content">
+<h3>Receive Refund</h3>
+<p>Once received and inspected, refund processed in 5-7 business days</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- CONDITIONS -->
+<div class="conditions-grid">
+<div class="condition-card acceptable">
+<h3><span class="condition-icon">✓</span>Acceptable Returns</h3>
+<p>Sealed, unused products in original packaging within 30 days with order confirmation</p>
+</div>
+<div class="condition-card acceptable">
+<h3><span class="condition-icon">✓</span>Damaged Items</h3>
+<p>Contact within 48 hours for immediate replacement or refund</p>
+</div>
+<div class="condition-card acceptable">
+<h3><span class="condition-icon">✓</span>Wrong Product</h3>
+<p>We sent the wrong item? Free replacement immediately</p>
+</div>
+<div class="condition-card unacceptable">
+<h3><span class="condition-icon">✗</span>Used Products</h3>
+<p>Opened or sprayed products cannot be returned</p>
+</div>
+<div class="condition-card unacceptable">
+<h3><span class="condition-icon">✗</span>Missing Packaging</h3>
+<p>Products without original boxes are not returnable</p>
+</div>
+<div class="condition-card unacceptable">
+<h3><span class="condition-icon">✗</span>Beyond 30 Days</h3>
+<p>Returns must be initiated within 30 days of purchase</p>
+</div>
+</div>
+
+<!-- FORM -->
+<div class="form-section">
+<h2>Initiate a Return</h2>
+<div class="success-message" id="returnsSuccess">
+<i class="fas fa-check-circle"></i>
+<p>Your return request has been submitted successfully!</p>
+</div>
+<form id="returnForm" onsubmit="handleReturnSubmit(event)">
+<div class="form-row">
+<div class="form-group">
+<label for="returnOrderNumber">Order Number *</label>
+<input type="text" id="returnOrderNumber" name="orderNumber" placeholder="AUR-2024-001234" required>
+</div>
+<div class="form-group">
+<label for="returnEmail">Email Address *</label>
+<input type="email" id="returnEmail" name="email" placeholder="your@email.com" required>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="returnProduct">Product Name *</label>
+<input type="text" id="returnProduct" name="product" placeholder="Product name" required>
+</div>
+<div class="form-group">
+<label for="returnReason">Return Reason *</label>
+<select id="returnReason" name="reason" required>
+<option value="">Select a reason</option>
+<option value="not-satisfied">Not Satisfied</option>
+<option value="wrong-product">Wrong Product</option>
+<option value="damaged">Damaged</option>
+<option value="defective">Defective</option>
+<option value="changed-mind">Changed Mind</option>
+<option value="other">Other</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label for="returnComments">Additional Comments</label>
+<textarea id="returnComments" name="comments" placeholder="Please provide details..."></textarea>
+</div>
+<div class="form-group checkbox-group">
+<input type="checkbox" id="returnConditions" name="conditions" required>
+<label for="returnConditions">I confirm the product is unused and in original packaging</label>
+</div>
+<button type="submit" class="submit-btn">Submit Return Request</button>
+</form>
+</div>
+
+</div>
+
+<!-- EXCHANGES TAB -->
+<div id="exchanges" class="tab-content">
+
+<!-- FEATURES -->
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">🔄</div>
+<h3>Free Exchange</h3>
+<p>Exchange for any other AURAYAN fragrance at no cost</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🚚</div>
+<h3>Free Shipping</h3>
+<p>Both ways shipping covered by AURAYAN</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">⚡</div>
+<h3>14-Day Limit</h3>
+<p>Exchange within 14 days of purchase for fastest service</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">✓</div>
+<h3>Easy Process</h3>
+<p>5 simple steps to get your new fragrance</p>
+</div>
+</div>
+
+<!-- PROCESS -->
+<div class="process-section">
+<h2>How to Exchange</h2>
+<div class="process-steps">
+<div class="step">
+<div class="step-number">1</div>
+<div class="step-content">
+<h3>Choose New Fragrance</h3>
+<p>Browse our collection and select the fragrance you want</p>
+</div>
+</div>
+<div class="step">
+<div class="step-number">2</div>
+<div class="step-content">
+<h3>Contact Us</h3>
+<p>Email exchanges@aurayan.com with your order number and new selection</p>
+</div>
+</div>
+<div class="step">
+<div class="step-number">3</div>
+<div class="step-content">
+<h3>Get Return Label</h3>
+<p>Receive prepaid return shipping label for your original product</p>
+</div>
+</div>
+<div class="step">
+<div class="step-number">4</div>
+<div class="step-content">
+<h3>Send Back Original</h3>
+<p>Ship your original item using the provided label</p>
+</div>
+</div>
+<div class="step">
+<div class="step-number">5</div>
+<div class="step-content">
+<h3>Receive New Product</h3>
+<p>Your new fragrance ships within 3-5 business days</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- CONDITIONS -->
+<div class="conditions-grid">
+<div class="condition-card acceptable">
+<h3><span class="condition-icon">✓</span>Any Product</h3>
+<p>Exchange for any AURAYAN fragrance of equal or lesser value</p>
+</div>
+<div class="condition-card acceptable">
+<h3><span class="condition-icon">✓</span>14-Day Window</h3>
+<p>Exchange within 14 days for fastest processing</p>
+</div>
+<div class="condition-card acceptable">
+<h3><span class="condition-icon">✓</span>Unused Only</h3>
+<p>Product must be unopened and in original condition</p>
+</div>
+<div class="condition-card unacceptable">
+<h3><span class="condition-icon">✗</span>Used Products</h3>
+<p>Opened or sprayed products cannot be exchanged</p>
+</div>
+<div class="condition-card unacceptable">
+<h3><span class="condition-icon">✗</span>Value Difference</h3>
+<p>Cannot upgrade to higher-priced items without additional payment</p>
+</div>
+<div class="condition-card unacceptable">
+<h3><span class="condition-icon">✗</span>Beyond 14 Days</h3>
+<p>Exchanges must be initiated within 14 days for best service</p>
+</div>
+</div>
+
+<!-- FORM -->
+<div class="form-section">
+<h2>Initiate an Exchange</h2>
+<div class="success-message" id="exchangesSuccess">
+<i class="fas fa-check-circle"></i>
+<p>Your exchange request has been submitted successfully!</p>
+</div>
+<form id="exchangeForm" onsubmit="handleExchangeSubmit(event)">
+<div class="form-row">
+<div class="form-group">
+<label for="exchangeOrderNumber">Order Number *</label>
+<input type="text" id="exchangeOrderNumber" name="orderNumber" placeholder="AUR-2024-001234" required>
+</div>
+<div class="form-group">
+<label for="exchangeEmail">Email Address *</label>
+<input type="email" id="exchangeEmail" name="email" placeholder="your@email.com" required>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="currentProduct">Current Product *</label>
+<input type="text" id="currentProduct" name="currentProduct" placeholder="Current fragrance" required>
+</div>
+<div class="form-group">
+<label for="newProduct">Desired Product *</label>
+<input type="text" id="newProduct" name="newProduct" placeholder="New fragrance" required>
+</div>
+</div>
+<div class="form-group">
+<label for="exchangeReason">Reason for Exchange</label>
+<select id="exchangeReason" name="reason">
+<option value="">Select a reason</option>
+<option value="different-scent">Want Different Scent</option>
+<option value="fragrance-type">Different Fragrance Type</option>
+<option value="recommendation">Friend Recommendation</option>
+<option value="seasonal">Seasonal Change</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="form-group">
+<label for="exchangeComments">Additional Comments</label>
+<textarea id="exchangeComments" name="comments" placeholder="Any special requests?"></textarea>
+</div>
+<div class="form-group checkbox-group">
+<input type="checkbox" id="exchangeConditions" name="conditions" required>
+<label for="exchangeConditions">I confirm the product is unused and in original packaging</label>
+</div>
+<button type="submit" class="submit-btn">Submit Exchange Request</button>
+</form>
+</div>
+
+</div>
+
+<!-- COMPARISON TAB -->
+<div id="comparison" class="tab-content">
+<div class="comparison-table">
+<div class="table-wrapper">
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Returns</th>
+<th>Exchanges</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cost</strong></td>
+<td><span class="checkmark">✓ FREE</span></td>
+<td><span class="checkmark">✓ FREE</span></td>
+</tr>
+<tr>
+<td><strong>Time Window</strong></td>
+<td>30 days</td>
+<td>14 days</td>
+</tr>
+<tr>
+<td><strong>What You Get</strong></td>
+<td>Full refund</td>
+<td>Different product</td>
+</tr>
+<tr>
+<td><strong>Processing Time</strong></td>
+<td>5-7 days</td>
+<td>3-5 days</td>
+</tr>
+<tr>
+<td><strong>Return Shipping</strong></td>
+<td><span class="checkmark">✓ Prepaid</span></td>
+<td><span class="checkmark">✓ Prepaid</span></td>
+</tr>
+<tr>
+<td><strong>Used Products Allowed</strong></td>
+<td><span class="cross">✗ No</span></td>
+<td><span class="cross">✗ No</span></td>
+</tr>
+<tr>
+<td><strong>Damaged Items Covered</strong></td>
+<td><span class="checkmark">✓ Yes</span></td>
+<td><span class="checkmark">✓ Yes</span></td>
+</tr>
+<tr>
+<td><strong>Product Value Downgrade</strong></td>
+<td>N/A</td>
+<td><span class="checkmark">✓ Yes</span></td>
+</tr>
+<tr>
+<td><strong>Product Value Upgrade</strong></td>
+<td>N/A</td>
+<td><span class="cross">✗ Not included</span></td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Unsatisfied with product</td>
+<td>Want different fragrance</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<!-- FAQ SECTION -->
+<div class="faq-section">
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFAQ(this)">
+<h3>What's the difference between returns and exchanges?</h3>
+<i class="fas fa-chevron-down faq-icon"></i>
+</div>
+<div class="faq-answer">
+Returns give you a full refund within 30 days. Exchanges let you swap your product for a different AURAYAN fragrance within 14 days. Both are completely free!
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFAQ(this)">
+<h3>Do I pay for return or exchange shipping?</h3>
+<i class="fas fa-chevron-down faq-icon"></i>
+</div>
+<div class="faq-answer">
+No! We provide prepaid return shipping labels for both returns and exchanges. You won't pay anything for shipping.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFAQ(this)">
+<h3>Can I return a product and then exchange later?</h3>
+<i class="fas fa-chevron-down faq-icon"></i>
+</div>
+<div class="faq-answer">
+No, you must choose either return or exchange at the time of request. However, once you receive your refund from a return, you can purchase a new product using that refund.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFAQ(this)">
+<h3>What if the product arrives damaged?</h3>
+<i class="fas fa-chevron-down faq-icon"></i>
+</div>
+<div class="faq-answer">
+Contact us within 48 hours with photos. We'll immediately send a replacement or refund, whichever you prefer, at no cost to you.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFAQ(this)">
+<h3>How long does the refund take?</h3>
+<i class="fas fa-chevron-down faq-icon"></i>
+</div>
+<div class="faq-answer">
+Once we receive and inspect your return, refunds are processed in 5-7 business days. It may take an additional 3-5 days for the amount to appear in your account depending on your bank.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFAQ(this)">
+<h3>Can I exchange for a higher-priced fragrance?</h3>
+<i class="fas fa-chevron-down faq-icon"></i>
+</div>
+<div class="faq-answer">
+Exchanges are for products of equal or lesser value. For upgrades to higher-priced items, you'd need to pay the difference or opt for a return and new purchase.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFAQ(this)">
+<h3>What if I don't have my order number?</h3>
+<i class="fas fa-chevron-down faq-icon"></i>
+</div>
+<div class="faq-answer">
+Contact us at returns@aurayan.com or exchanges@aurayan.com with the email address on your account, and we'll help you locate your order.
+</div>
+</div>
+
+</div>
+
+<!-- CONTACT SECTION -->
+<div class="contact-section">
+<h2>Need More Help?</h2>
+<p>Our support team is ready to assist you with any questions about returns or exchanges.</p>
+<div class="contact-buttons">
+<a href="contact.html" class="contact-btn">
+<i class="fas fa-envelope"></i>
+Contact Support
+</a>
+<a href="mailto:returns@aurayan.com" class="contact-btn secondary">
+<i class="fas fa-envelope"></i>
+Email Returns
+</a>
+<a href="mailto:exchanges@aurayan.com" class="contact-btn secondary">
+<i class="fas fa-envelope"></i>
+Email Exchanges
+</a>
+</div>
+</div>
+
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo" class="footer">
+<div class="footer-container">
+<div class="footer-section">
+<h3>AURAYAN</h3>
+<p>Premium luxury fragrance for modern royalty.</p>
+</div>
+<div class="footer-section">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="collection-new.html">Collection</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="#">Blog</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Support</h4>
+<ul>
+<li><a href="track-order.html">Track Order</a></li>
+<li><a href="returns-exchanges.html">Returns & Exchanges</a></li>
+<li><a href="#">FAQ</a></li>
+<li><a href="contact.html">Help</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Legal</h4>
+<ul>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms & Conditions</a></li>
+<li><a href="#">Shipping Info</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 AURAYAN Luxury Fragrance. All Rights Reserved.</p>
+</div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+  // Tab switching
+  function switchTab(e, tabName) {
+    const tabs = document.querySelectorAll('.tab-content');
+    const buttons = document.querySelectorAll('.tab-btn');
+    
+    tabs.forEach(tab => tab.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    document.getElementById(tabName).classList.add('active');
+    e.target.classList.add('active');
+    e.target.setAttribute('aria-selected', 'true');
+  }
+
+  // Toggle FAQ
+  function toggleFAQ(element) {
+    element.parentElement.classList.toggle('active');
+  }
+
+  // Handle return form
+  function handleReturnSubmit(event) {
+    event.preventDefault();
+    const successMsg = document.getElementById('returnsSuccess');
+    successMsg.classList.add('show');
+    document.getElementById('returnForm').reset();
+    setTimeout(() => {
+      successMsg.classList.remove('show');
+    }, 5000);
+  }
+
+  // Handle exchange form
+  function handleExchangeSubmit(event) {
+    event.preventDefault();
+    const successMsg = document.getElementById('exchangesSuccess');
+    successMsg.classList.add('show');
+    document.getElementById('exchangeForm').reset();
+    setTimeout(() => {
+      successMsg.classList.remove('show');
+    }, 5000);
+  }
+
+  // Hamburger menu
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('nav-menu');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

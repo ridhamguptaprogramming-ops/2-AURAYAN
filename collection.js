@@ -2,26 +2,26 @@
 const productsDatabase = [
     {
         id: 1,
-        name: 'Velvet Oud',
+        name: 'Noor Elixir',
         notes: 'Deep, Warm, Magnetic',
         category: 'oud',
-        price: 2499,
-        originalPrice: 3199,
+        price: 200,
+        originalPrice: 500,
         discount: '-22%',
-        rating: 248,
+        rating: 12,
         stars: 5,
         badge: 'BEST SELLER',
-        image: 'https://via.placeholder.com/500x600?text=Velvet+Oud',
-        thumb1: 'https://via.placeholder.com/100x100?text=V1',
-        thumb2: 'https://via.placeholder.com/100x100?text=V2',
-        thumb3: 'https://via.placeholder.com/100x100?text=V3',
-        thumb4: 'https://via.placeholder.com/100x100?text=V4',
-        topNotes: 'Spice, Bergamot',
+        image: '3.png',
+        thumb1: '3.png',
+        thumb2: '4.png',
+        thumb3: '5.png',
+        // thumb4: 'https://via.placeholder.com/100x100?text=V4',
+        topNotes: 'Incense, greanium, safroon',
         heartNotes: 'Amber, Rose',
-        baseNotes: 'Oud, Musk, Sandalwood',
-        type: 'Oud',
+        baseNotes: 'Rasberry, rose',
+        type: 'Agarwood, amberwood',
         occasion: 'Evening/Night',
-        description: 'Deep woody oud blended with amber and spice for night luxury. Experience the perfect balance of warmth and sophistication. This exquisite fragrance is meticulously crafted with premium globally-sourced ingredients, designed for exceptional longevity and presence.'
+        description: 'AURAYAN Noor Elixir opens with a bold fusion of strong spicy and woody notes, creating an intense and captivating first impression. As the fragrance unfolds, the heart reveals a refreshing blend of raspberry and rose, adding a vibrant yet elegant character. In its final trail, AURAYAN Noor Elixir embraces the essence of nature with the smooth breeze of agarwood and rich amberwood, leaving behind a deep, warm, and unforgettable signature.'
     },
     {
         id: 2,
@@ -388,3 +388,9 @@ function showNotification(message) {
         notification.classList.remove('show');
     }, 3000);
 }
+function updateCartCount(){
+    const cart = JSON.parse(localStorage.getItem('aurayanCart')) || [];
+    document.getElementById('cart-count').innerText = cart.length;
+}
+
+updateCartCount();

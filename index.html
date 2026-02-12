@@ -58,14 +58,14 @@
 
 <body>
 <!-- SKIP TO CONTENT LINK (Accessibility) -->
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="main-content" class="skip-link">Skip to main content</a>
 
 <!-- HEADER & NAVBAR -->
 <header role="banner">
 <nav role="navigation" aria-label="Main navigation" class="navbar">
 <div class="nav-container">
 <div class="logo" aria-label="AURAYAN - Go to homepage">
-<a href="#home">AURAYAN</a>
+<a href="index.html">AURAYAN</a>
 </div>
 
 <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" id="hamburger-menu">
@@ -75,7 +75,7 @@
 </button>
 
 <div class="nav-links" id="nav-menu">
-<a href="#home" class="nav-link">Home</a>
+<a href="index.html" class="nav-link">Home</a>
 <a href="collection.html" class="nav-link">Collection</a>
 <a href="about.html" class="nav-link">About</a>
 <a href="contact.html" class="nav-link">Contact</a>
@@ -94,14 +94,21 @@
 <circle cx="12" cy="7" r="4"></circle>
 </svg>
 </button>
-<button class="icon-btn cart-btn" aria-label="Shopping cart" id="cart-btn">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-<circle cx="9" cy="21" r="1"></circle>
-<circle cx="20" cy="21" r="1"></circle>
-<path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-</svg>
-<span class="cart-count" id="cart-count">0</span>
+<button class="icon-btn cart-btn" aria-label="Shopping cart" id="cart-btn"></button>
+<a href="cart.html" class="icon-btn cart-btn" aria-label="Shopping cart" id="cart-btn">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+    </svg>
+    <span class="cart-count" id="cart-count">0</span>
+</a>
 </button>
+<script>
+document.getElementById("cart-btn").addEventListener("click", function() {
+    window.location.href = "cart.html";
+});
+</script>
 </div>
 </div>
 </nav>
@@ -137,8 +144,8 @@ Discover Aura
 
 <div class="hero-image">
 <picture>
-<source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400&q=80">
-<img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800&q=80" alt="Premium luxury perfume bottle with golden accents representing AURAYAN fragrance" loading="eager">
+<source media="(max-width: 768px)" srcset="3.png">
+<img src="3.png" alt="Premium luxury perfume bottle with golden accents representing AURAYAN fragrance" loading="eager">
 </picture>
 </div>
 </div>
@@ -474,7 +481,7 @@ Shop Now
 <li><a href="collection.html">Collection</a></li>
 <li><a href="collection.html#new">New Arrivals</a></li>
 <li><a href="collection.html#bestsellers">Best Sellers</a></li>
-<li><a href="#">Gift Sets</a></li>
+<li><a href="Gift Sets.html">Gift Sets</a></li>
 </ul>
 </div>
 
@@ -482,9 +489,9 @@ Shop Now
 <h4>Information</h4>
 <ul>
 <li><a href="about.html">About Us</a></li>
-<li><a href="#">Blog</a></li>
+<li><a href="collection.html">Blog</a></li>
 <li><a href="#">Fragrance Guide</a></li>
-<li><a href="#">Sustainability</a></li>
+<li><a href="Sustainability.html">Sustainability</a></li>
 </ul>
 </div>
 
@@ -492,8 +499,8 @@ Shop Now
 <h4>Support</h4>
 <ul>
 <li><a href="contact.html">Contact Us</a></li>
-<li><a href="#">Track Order</a></li>
-<li><a href="#">Returns & Exchanges</a></li>
+<li><a href="TrackOrder.html">Track Order</a></li>
+<li><a href="Returns & Exchanges.html">Returns & Exchanges</a></li>
 <li><a href="#">Size Guide</a></li>
 </ul>
 </div>
@@ -505,15 +512,6 @@ Shop Now
 <li><a href="#">Terms of Service</a></li>
 <li><a href="#">Cookie Policy</a></li>
 <li><a href="#">Shipping Info</a></li>
-</ul>
-</div>
-
-<div class="footer-section">
-<h4>Contact Info</h4>
-<ul>
-<li>📧 hello@aurayan.com</li>
-<li>📞 +91-XXXX-XXXX-XX</li>
-<li>📍 Mumbai, India</li>
 </ul>
 </div>
 </div>
