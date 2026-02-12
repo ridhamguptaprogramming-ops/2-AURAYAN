@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- META TAGS FOR SEO & PERFORMANCE -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AURAYAN - Premium luxury fragrance crafted for modern royalty. Experience Indian heritage with global perfumery science. Long-lasting, made for Indian climate.">
+<meta name="keywords" content="luxury fragrance, premium perfume, Velvet Oud, Imperial Rose, Crown Amber, Indian fragrance">
+<meta name="author" content="AURAYAN Luxury Fragrance">
+<meta name="theme-color" content="#C6A14A">
+
+<!-- OPEN GRAPH FOR SOCIAL MEDIA -->
+<meta property="og:title" content="AURAYAN | Luxury Fragrance - Wear Your Invisible Crown">
+<meta property="og:description" content="Premium luxury fragrance crafted for modern royalty">
+<meta property="og:image" content="https://images.unsplash.com/photo-1594035910387-fea47794261f">
+<meta property="og:url" content="https://aurayan.com">
+<meta property="og:type" content="website">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AURAYAN | Luxury Fragrance">
+<meta name="twitter:description" content="Wear Your Invisible Crown - Premium Luxury Fragrance">
+
+<!-- FAVICON & ICONS -->
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- STYLESHEETS -->
+<title>AURAYAN | Luxury Fragrance - Wear Your Invisible Crown</title>
+<link rel="stylesheet" href="index.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- STRUCTURED DATA (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AURAYAN",
+  "url": "https://aurayan.com",
+  "logo": "https://aurayan.com/logo.png",
+  "description": "Premium luxury fragrance for modern royalty",
+  "sameAs": [
+    "https://facebook.com/aurayan",
+    "https://instagram.com/aurayan",
+    "https://twitter.com/aurayan"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "email": "hello@aurayan.com"
+  }
+}
+</script>
+</head>
+
+<body>
+<!-- SKIP TO CONTENT LINK (Accessibility) -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- HEADER & NAVBAR -->
+<header role="banner">
+<nav role="navigation" aria-label="Main navigation" class="navbar">
+<div class="nav-container">
+<div class="logo" aria-label="AURAYAN - Go to homepage">
+<a href="#home">AURAYAN</a>
+</div>
+
+<button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" id="hamburger-menu">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+<div class="nav-links" id="nav-menu">
+<a href="#home" class="nav-link">Home</a>
+<a href="collection.html" class="nav-link">Collection</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="contact.html" class="nav-link">Contact</a>
+</div>
+
+<div class="nav-icons">
+<button class="icon-btn" aria-label="Search" id="search-btn">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<circle cx="11" cy="11" r="8"></circle>
+<path d="m21 21-4.35-4.35"></path>
+</svg>
+</button>
+<button class="icon-btn" aria-label="User account" id="user-btn">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+</button>
+<button class="icon-btn cart-btn" aria-label="Shopping cart" id="cart-btn">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+<circle cx="9" cy="21" r="1"></circle>
+<circle cx="20" cy="21" r="1"></circle>
+<path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+</svg>
+<span class="cart-count" id="cart-count">0</span>
+</button>
+</div>
+</div>
+</nav>
+</header>
+
+<!-- SEARCH MODAL -->
+<div class="search-modal" id="search-modal" aria-hidden="true">
+<div class="search-container">
+<button class="close-btn" aria-label="Close search">&times;</button>
+<input type="search" placeholder="Search fragrances..." aria-label="Search products" class="search-input">
+<div class="search-results" id="search-results"></div>
+</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main id="main-content">
+
+<!-- HERO SECTION -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+<div class="hero-content">
+<div class="hero-text">
+<h1 id="hero-title" class="hero-heading">Wear Your Invisible Crown</h1>
+<p class="hero-subtitle">Luxury fragrance crafted for modern royalty. Designed for presence, power and legacy.</p>
+<div class="hero-buttons">
+<button class="btn btn-primary" onclick="document.location='collection.html'">
+Shop Collection
+</button>
+<button class="btn btn-secondary">
+Discover Aura
+</button>
+</div>
+</div>
+
+<div class="hero-image">
+<picture>
+<source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400&q=80">
+<img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800&q=80" alt="Premium luxury perfume bottle with golden accents representing AURAYAN fragrance" loading="eager">
+</picture>
+</div>
+</div>
+
+<!-- SCROLL INDICATOR -->
+<div class="scroll-indicator" aria-hidden="true">
+<span></span>
+</div>
+</section>
+
+<!-- TRUST/USP BAR -->
+<section class="trust-bar" aria-label="Product benefits and features">
+<div class="trust-container">
+<div class="trust-item">
+<div class="trust-icon">⏱️</div>
+<div class="trust-content">
+<strong>12+ Hours Duration</strong>
+<p>Long lasting fragrance performance</p>
+</div>
+</div>
+<div class="trust-item">
+<div class="trust-icon">🌍</div>
+<div class="trust-content">
+<strong>Global Luxury Oils</strong>
+<p>Premium ingredients worldwide</p>
+</div>
+</div>
+<div class="trust-item">
+<div class="trust-icon">✨</div>
+<div class="trust-content">
+<strong>Premium Packaging</strong>
+<p>Luxury unboxing experience</p>
+</div>
+</div>
+<div class="trust-item">
+<div class="trust-icon">🇮🇳</div>
+<div class="trust-content">
+<strong>Climate Optimized</strong>
+<p>Specially formulated for tropical weather</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FEATURED PRODUCTS / SIGNATURE COLLECTION -->
+<section class="collection" aria-labelledby="collection-title">
+<div class="collection-header">
+<h2 id="collection-title">Signature Collection</h2>
+<p class="section-subtitle">Discover your signature aura</p>
+</div>
+
+<div class="products" role="list">
+
+<!-- PRODUCT 1 -->
+<article class="product-card" role="listitem" data-product-id="velvet-oud">
+<div class="card-image-wrapper">
+<picture>
+<source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=300&q=80">
+<img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=500&q=80" alt="Velvet Oud - Deep warm magnetic luxury fragrance" loading="lazy">
+</picture>
+<span class="badge">Best Seller</span>
+<button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+</div>
+<div class="card-content">
+<h3 class="product-name">Velvet Oud</h3>
+<p class="product-tagline">Deep. Warm. Magnetic.</p>
+<p class="product-description">A mysterious blend of exotic Oud with warm spices. Creates an aura of sophistication and power.</p>
+<div class="rating">
+<span class="stars">★★★★★</span>
+<span class="review-count">(248 reviews)</span>
+</div>
+<div class="product-footer">
+<div class="price-section">
+<span class="price">₹2,499</span>
+<span class="original-price">₹3,199</span>
+<span class="discount">-22%</span>
+</div>
+<button class="btn btn-add-cart" data-product="velvet-oud">Add to Cart</button>
+</div>
+</div>
+</article>
+
+<!-- PRODUCT 2 -->
+<article class="product-card" role="listitem" data-product-id="imperial-rose">
+<div class="card-image-wrapper">
+<picture>
+<source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1541643600914-78b084683601?w=300&q=80">
+<img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&q=80" alt="Imperial Rose - Soft power royal elegance fragrance" loading="lazy">
+</picture>
+<span class="badge new">New</span>
+<button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+</div>
+<div class="card-content">
+<h3 class="product-name">Imperial Rose</h3>
+<p class="product-tagline">Soft power. Royal elegance.</p>
+<p class="product-description">Delicate rose petals with jasmine and musk. Perfect for those who lead with grace and confidence.</p>
+<div class="rating">
+<span class="stars">★★★★☆</span>
+<span class="review-count">(156 reviews)</span>
+</div>
+<div class="product-footer">
+<div class="price-section">
+<span class="price">₹2,299</span>
+<span class="original-price">₹2,899</span>
+<span class="discount">-21%</span>
+</div>
+<button class="btn btn-add-cart" data-product="imperial-rose">Add to Cart</button>
+</div>
+</div>
+</article>
+
+<!-- PRODUCT 3 -->
+<article class="product-card" role="listitem" data-product-id="crown-amber">
+<div class="card-image-wrapper">
+<picture>
+<source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1595429035839-c99c298ffdde?w=300&q=80">
+<img src="https://images.unsplash.com/photo-1595429035839-c99c298ffdde?w=500&q=80" alt="Crown Amber - Rich addictive luxurious fragrance" loading="lazy">
+</picture>
+<button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+</div>
+<div class="card-content">
+<h3 class="product-name">Crown Amber</h3>
+<p class="product-tagline">Rich. Addictive. Luxurious.</p>
+<p class="product-description">Golden amber with tobacco and vanilla notes. An intoxicating blend that leaves lasting impressions.</p>
+<div class="rating">
+<span class="stars">★★★★★</span>
+<span class="review-count">(312 reviews)</span>
+</div>
+<div class="product-footer">
+<div class="price-section">
+<span class="price">₹2,699</span>
+<span class="original-price">₹3,499</span>
+<span class="discount">-23%</span>
+</div>
+<button class="btn btn-add-cart" data-product="crown-amber">Add to Cart</button>
+</div>
+</div>
+</article>
+
+</div>
+
+<div class="collection-footer">
+<a href="collection.html" class="view-all-link">View Full Collection →</a>
+</div>
+</section>
+
+<!-- BRAND STORY SECTION -->
+<section class="story" aria-labelledby="story-title">
+<div class="story-grid">
+<div class="story-image">
+<picture>
+<source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&q=80">
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80" alt="Luxury fragrance crafting process with premium ingredients" loading="lazy">
+</picture>
+</div>
+
+<div class="story-content">
+<h2 id="story-title">The Art of Presence</h2>
+<p class="story-intro">
+Our Legacy in Every Drop
+</p>
+<p class="story-text">
+AURAYAN blends Indian heritage, Middle Eastern richness and global perfumery science. Every bottle is crafted to create identity, memory and signature presence. 
+</p>
+<p class="story-text">
+We believe fragrance is more than a scent—it's your invisible crown. It tells your story before words are spoken, creates memories that last lifetimes, and defines your presence in every room.
+</p>
+<ul class="story-highlights">
+<li>✓ Hand-crafted in small batches</li>
+<li>✓ Ethically sourced ingredients</li>
+<li>✓ Cruelty-free & sustainable</li>
+</ul>
+<button class="btn btn-secondary">Learn More About Our Story</button>
+</div>
+</div>
+</section>
+
+<!-- WHY CHOOSE AURAYAN -->
+<section class="why-choose" aria-labelledby="why-title">
+<h2 id="why-title">Why AURAYAN</h2>
+<p class="section-subtitle">Crafted for modern royalty</p>
+
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">💎</div>
+<h3>Premium Global Ingredients</h3>
+<p>Sourced from finest perfumeries across France, Italy, and the Middle East</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">⏰</div>
+<h3>Long Lasting Performance</h3>
+<p>Advanced formulation ensures 12+ hours of sustained fragrance projection</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">🎁</div>
+<h3>Luxury Packaging</h3>
+<p>Premium glass bottles with gold accents and elegant presentation boxes</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">🏆</div>
+<h3>International Standards</h3>
+<p>ISO certified and tested by leading fragrance institutes worldwide</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">🌱</div>
+<h3>Sustainability Focus</h3>
+<p>Eco-friendly packaging and ethically sourced ingredients</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">💝</div>
+<h3>30-Day Guarantee</h3>
+<p>Not satisfied? Full refund within 30 days, no questions asked</p>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section class="testimonials" aria-labelledby="testimonials-title">
+<h2 id="testimonials-title">What Our Customers Say</h2>
+
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p class="testimonial-text">
+"AURAYAN is not just a fragrance, it's a statement. I've received more compliments with this than any other perfume I've owned."
+</p>
+<p class="testimonial-author">— Priya Sharma, Delhi</p>
+</div>
+
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p class="testimonial-text">
+"The longevity is incredible. I applied it in the morning and could still smell it at the end of the day. Worth every penny!"
+</p>
+<p class="testimonial-author">— Arun Patel, Mumbai</p>
+</div>
+
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p class="testimonial-text">
+"Finally, a luxury fragrance that's designed for our climate. No chemical harshness, just pure elegance."
+</p>
+<p class="testimonial-author">— Anjali Singh, Bangalore</p>
+</div>
+</div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq" aria-labelledby="faq-title">
+<h2 id="faq-title">Frequently Asked Questions</h2>
+
+<div class="faq-container">
+<details class="faq-item">
+<summary>How long does AURAYAN fragrance last?</summary>
+<p>Our fragrances are formulated to last 12+ hours with proper application. The longevity depends on your skin type and application technique.</p>
+</details>
+
+<details class="faq-item">
+<summary>Is AURAYAN suitable for the Indian climate?</summary>
+<p>Yes! All AURAYAN fragrances are specially formulated for tropical weather and won't feel heavy in humid conditions.</p>
+</details>
+
+<details class="faq-item">
+<summary>Do you offer samples?</summary>
+<p>Yes, we offer sample sets so you can try before committing to a full bottle.</p>
+</details>
+
+<details class="faq-item">
+<summary>Are your products cruelty-free?</summary>
+<p>Absolutely. We are 100% cruelty-free and use only ethically sourced ingredients.</p>
+</details>
+
+<details class="faq-item">
+<summary>What's your return policy?</summary>
+<p>We offer a 30-day money-back guarantee. If you're not satisfied, we'll refund your money in full.</p>
+</details>
+</div>
+</section>
+
+<!-- NEWSLETTER SIGNUP -->
+<section class="newsletter" aria-labelledby="newsletter-title">
+<div class="newsletter-content">
+<h2 id="newsletter-title">Join the AURAYAN Community</h2>
+<p>Subscribe for exclusive offers, new launches, and fragrance tips.</p>
+
+<form class="newsletter-form" id="newsletter-form" novalidate>
+<div class="form-group">
+<input type="email" placeholder="Enter your email" required aria-label="Email address" class="newsletter-input">
+<button type="submit" class="btn btn-primary">Subscribe</button>
+</div>
+<p class="form-disclaimer">We respect your privacy. Unsubscribe anytime.</p>
+</form>
+</div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="cta-section" aria-labelledby="cta-title">
+<h2 id="cta-title">Find Your Signature Aura</h2>
+<p>Discover the fragrance that matches your personality and presence.</p>
+<button class="btn btn-primary btn-lg" onclick="document.location='collection.html'">
+Shop Now
+</button>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo" class="footer">
+<div class="footer-container">
+<div class="footer-section">
+<h3>AURAYAN</h3>
+<p>Premium luxury fragrance for modern royalty.</p>
+<div class="social-links">
+<a href="https://facebook.com/aurayan" target="_blank" rel="noopener noreferrer" aria-label="youtube">
+<i class="fab fa-youtube"></i>
+</a>
+<a href="https://www.instagram.com/aurayan2026?igsh=MWdkcWlvejM5d21zag==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="https://twitter.com/aurayan" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+<i class="fab fa-twitter"></i>
+</div>
+</div>
+
+<div class="footer-section">
+<h4>Shop</h4>
+<ul>
+<li><a href="collection.html">Collection</a></li>
+<li><a href="collection.html#new">New Arrivals</a></li>
+<li><a href="collection.html#bestsellers">Best Sellers</a></li>
+<li><a href="#">Gift Sets</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h4>Information</h4>
+<ul>
+<li><a href="about.html">About Us</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Fragrance Guide</a></li>
+<li><a href="#">Sustainability</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h4>Support</h4>
+<ul>
+<li><a href="contact.html">Contact Us</a></li>
+<li><a href="#">Track Order</a></li>
+<li><a href="#">Returns & Exchanges</a></li>
+<li><a href="#">Size Guide</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h4>Legal</h4>
+<ul>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms of Service</a></li>
+<li><a href="#">Cookie Policy</a></li>
+<li><a href="#">Shipping Info</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h4>Contact Info</h4>
+<ul>
+<li>📧 hello@aurayan.com</li>
+<li>📞 +91-XXXX-XXXX-XX</li>
+<li>📍 Mumbai, India</li>
+</ul>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>&copy; 2026 AURAYAN Luxury Fragrance. All Rights Reserved.</p>
+<p>Designed with ❤️ for modern royalty.</p>
+</div>
+</footer>
+
+<!-- BACK TO TOP BUTTON -->
+<button class="back-to-top" id="back-to-top" aria-label="Back to top" hidden>↑</button>
+
+<!-- CART SIDEBAR (Mobile-friendly) -->
+<div class="cart-sidebar" id="cart-sidebar" aria-hidden="true" aria-label="Shopping cart">
+<div class="cart-header">
+<h3>Shopping Cart</h3>
+<button class="close-btn" aria-label="Close cart">&times;</button>
+</div>
+<div class="cart-items" id="cart-items">
+<p class="empty-cart">Your cart is empty</p>
+</div>
+<div class="cart-footer">
+<div class="cart-total">
+<strong>Total:</strong>
+<span id="cart-total">₹0</span>
+</div>
+<button class="btn btn-primary btn-block">Checkout</button>
+</div>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" aria-hidden="true"></div>
+
+<!-- SCRIPTS -->
+<script src="script.js" defer></script>
+
+</body>
+</html>
