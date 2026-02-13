@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="Wear Your Invisible Crown - Premium Luxury Fragrance">
 
 <!-- FAVICON & ICONS -->
- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -58,7 +58,7 @@
 
 <body>
 <!-- SKIP TO CONTENT LINK (Accessibility) -->
-<a href="main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- HEADER & NAVBAR -->
 <header role="banner">
@@ -94,7 +94,6 @@
 <circle cx="12" cy="7" r="4"></circle>
 </svg>
 </button>
-<button class="icon-btn cart-btn" aria-label="Shopping cart" id="cart-btn"></button>
 <a href="cart.html" class="icon-btn cart-btn" aria-label="Shopping cart" id="cart-btn">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <circle cx="9" cy="21" r="1"></circle>
@@ -103,12 +102,6 @@
     </svg>
     <span class="cart-count" id="cart-count">0</span>
 </a>
-</button>
-<script>
-document.getElementById("cart-btn").addEventListener("click", function() {
-    window.location.href = "cart.html";
-});
-</script>
 </div>
 </div>
 </nav>
@@ -144,44 +137,43 @@ Discover Aura
 
 <div class="hero-image">
 <picture>
-<source media="(max-width: 768px)" srcset="3.png">
-<img src="3.png" alt="Premium luxury perfume bottle with golden accents representing AURAYAN fragrance" loading="eager">
+<source media="(max-width: 768px)" srcset="6.png?w=300&q=80">
+<img src="6.png" alt="Premium luxury perfume bottle with golden accents representing AURAYAN fragrance" loading="eager">
 </picture>
 </div>
-</div>
+</section>
 
 <!-- SCROLL INDICATOR -->
 <div class="scroll-indicator" aria-hidden="true">
 <span></span>
 </div>
-</section>
 
 <!-- TRUST/USP BAR -->
 <section class="trust-bar" aria-label="Product benefits and features">
 <div class="trust-container">
 <div class="trust-item">
-<div class="trust-icon">⏱️</div>
+<div class="trust-icon"><i class="fas fa-clock"></i></div>
 <div class="trust-content">
 <strong>12+ Hours Duration</strong>
 <p>Long lasting fragrance performance</p>
 </div>
 </div>
 <div class="trust-item">
-<div class="trust-icon">🌍</div>
+<div class="trust-icon"><i class="fas fa-globe"></i></div>
 <div class="trust-content">
 <strong>Global Luxury Oils</strong>
 <p>Premium ingredients worldwide</p>
 </div>
 </div>
 <div class="trust-item">
-<div class="trust-icon">✨</div>
+<div class="trust-icon"><i class="fas fa-sparkles"></i></div>
 <div class="trust-content">
 <strong>Premium Packaging</strong>
 <p>Luxury unboxing experience</p>
 </div>
 </div>
 <div class="trust-item">
-<div class="trust-icon">🇮🇳</div>
+<div class="trust-icon"><i class="fas fa-leaf"></i></div>
 <div class="trust-content">
 <strong>Climate Optimized</strong>
 <p>Specially formulated for tropical weather</p>
@@ -203,11 +195,10 @@ Discover Aura
 <article class="product-card" role="listitem" data-product-id="velvet-oud">
 <div class="card-image-wrapper">
 <picture>
-<source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=300&q=80">
-<img src="3.png" alt="Velvet Oud - Deep warm magnetic luxury fragrance" loading="lazy">
+<source media="(max-width: 768px)" srcset="3.png?w=300&q=80">
+<img src="3.png" alt="Noor Elixir - Deep warm magnetic luxury fragrance" loading="lazy">
 </picture>
-<!-- <span class="badge">Best Seller</span> -->
- <span class="badge new">New</span>
+<span class="badge new">New</span>
 <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
 </div>
 <div class="card-content">
@@ -233,8 +224,8 @@ Discover Aura
 <article class="product-card" role="listitem" data-product-id="imperial-rose">
 <div class="card-image-wrapper">
 <picture>
-<source media="(max-width: 768px)" srcset="5.png">
-<img src="6.png" alt="Imperial Rose - Soft power royal elegance fragrance" loading="lazy">
+<source media="(max-width: 768px)" srcset="6.png?w=300&q=80">
+<img src="6.png" alt="Sultan Reserve Collection - Soft power royal elegance fragrance" loading="lazy">
 </picture>
 <span class="badge new">New</span>
 <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
@@ -242,7 +233,7 @@ Discover Aura
 <div class="card-content">
 <h3 class="product-name">AURAYAN Sultan Reserve Collection</h3>
 <p class="product-tagline">Soft power. Royal elegance.</p>
-<p class="product-description">Encased in a sleek midnight-blue flacon and presented in a premium black-gold collector’s box, the Sultan Reserve Collection is more than fragrance — it is identity, ambition, and legacy bottled.</p>
+<p class="product-description">Encased in a sleek midnight-blue flacon and presented in a premium black-gold collector's box, the Sultan Reserve Collection is more than fragrance — it is identity, ambition, and legacy bottled.</p>
 <div class="rating">
 <span class="stars">★★★★☆</span>
 <span class="review-count">(05 reviews)</span>
@@ -262,8 +253,8 @@ Discover Aura
 <article class="product-card" role="listitem" data-product-id="crown-amber">
 <div class="card-image-wrapper">
 <picture>
-<source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1595429035839-c99c298ffdde?w=300&q=80">
-<img src="7.png" alt="Crown Amber - Rich addictive luxurious fragrance" loading="lazy">
+<source media="(max-width: 768px)" srcset="8.png?w=300&q=80">
+<img src="8.png" alt="Infinite Aura - Rich addictive luxurious fragrance" loading="lazy">
 </picture>
 <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
 </div>
@@ -298,8 +289,8 @@ Discover Aura
 <div class="story-grid">
 <div class="story-image">
 <picture>
-<source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&q=80">
-<img src="8.png" alt="AURAYAN fragrance bottle with golden accents and elegant design representing the brand story of AURAYAN" loading="lazy">
+<source media="(max-width: 768px)" srcset="10.png?w=300&q=80">
+<img src="10.png" alt="AURAYAN fragrance bottle with golden accents and elegant design representing the brand story of AURAYAN" loading="lazy">
 </picture>
 </div>
 
@@ -334,38 +325,37 @@ We believe fragrance is more than a scent—it's your invisible crown. It tells 
 
 <div class="features-grid">
 <div class="feature-card">
-<div class="feature-icon">💎</div>
+<div class="feature-icon"><i class="fas fa-gem"></i></div>
 <h3>Premium Global Ingredients</h3>
 <p>Sourced from finest perfumeries across France, Italy, and the Middle East</p>
 </div>
 
 <div class="feature-card">
-<div class="feature-icon">⏰</div>
+<div class="feature-icon"><i class="fas fa-hourglass-end"></i></div>
 <h3>Long Lasting Performance</h3>
 <p>Advanced formulation ensures 12+ hours of sustained fragrance projection</p>
 </div>
 
 <div class="feature-card">
-<div class="feature-icon">🎁</div>
+<div class="feature-icon"><i class="fas fa-box"></i></div>
 <h3>Luxury Packaging</h3>
 <p>Premium glass bottles with gold accents and elegant presentation boxes</p>
 </div>
 
 <div class="feature-card">
-<div class="feature-icon">🏆</div>
+<div class="feature-icon"><i class="fas fa-trophy"></i></div>
 <h3>International Standards</h3>
 <p>ISO certified and tested by leading fragrance institutes worldwide</p>
 </div>
 
 <div class="feature-card">
-<div class="feature-icon">🌱</div>
+<div class="feature-icon"><i class="fas fa-leaf"></i></div>
 <h3>Sustainability Focus</h3>
 <p>Eco-friendly packaging and ethically sourced ingredients</p>
 </div>
 
 <div class="feature-card">
-<div class="feature-icon"><img src="9.png"></div>
-<div></div>
+<div class="feature-icon"><i class="fas fa-check-circle"></i></div>
 <h3>30-Day Guarantee</h3>
 <p>Not satisfied? Full refund within 30 days, no questions asked</p>
 </div>
@@ -469,7 +459,7 @@ Shop Now
 <h3>AURAYAN</h3>
 <p>Premium luxury fragrance for modern royalty.</p>
 <div class="social-links">
-<a href="https://facebook.com/aurayan" target="_blank" rel="noopener noreferrer" aria-label="youtube">
+<a href="https://youtube.com/aurayan" target="_blank" rel="noopener noreferrer" aria-label="youtube">
 <i class="fab fa-youtube"></i>
 </a>
 <a href="https://www.instagram.com/aurayan2026?igsh=MWdkcWlvejM5d21zag==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -477,6 +467,7 @@ Shop Now
 </a>
 <a href="https://twitter.com/aurayan" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
 <i class="fab fa-twitter"></i>
+</a>
 </div>
 </div>
 
@@ -486,7 +477,7 @@ Shop Now
 <li><a href="collection.html">Collection</a></li>
 <li><a href="collection.html#new">New Arrivals</a></li>
 <li><a href="collection.html#bestsellers">Best Sellers</a></li>
-<li><a href="Gift Sets.html">Gift Sets</a></li>
+<li><a href="gift-sets.html">Gift Sets</a></li>
 </ul>
 </div>
 
@@ -494,9 +485,9 @@ Shop Now
 <h4>Information</h4>
 <ul>
 <li><a href="about.html">About Us</a></li>
-<li><a href="collection.html">Blog</a></li>
-<li><a href="#">Fragrance Guide</a></li>
-<li><a href="Sustainability.html">Sustainability</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="fragrance-guide.html">Fragrance Guide</a></li>
+<li><a href="sustainability.html">Sustainability</a></li>
 </ul>
 </div>
 
@@ -504,19 +495,19 @@ Shop Now
 <h4>Support</h4>
 <ul>
 <li><a href="contact.html">Contact Us</a></li>
-<li><a href="TrackOrder.html">Track Order</a></li>
-<li><a href="Returns & Exchanges.html">Returns & Exchanges</a></li>
-<li><a href="#">Size Guide</a></li>
+<li><a href="track-order.html">Track Order</a></li>
+<li><a href="returns-exchanges.html">Returns & Exchanges</a></li>
+<li><a href="size-guide.html">Size Guide</a></li>
 </ul>
 </div>
 
 <div class="footer-section">
 <h4>Legal</h4>
 <ul>
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="#">Terms of Service</a></li>
-<li><a href="#">Cookie Policy</a></li>
-<li><a href="#">Shipping Info</a></li>
+<li><a href="privacy-policy.html">Privacy Policy</a></li>
+<li><a href="terms-of-service.html">Terms of Service</a></li>
+<li><a href="cookie-policy.html">Cookie Policy</a></li>
+<li><a href="shipping-info.html">Shipping Info</a></li>
 </ul>
 </div>
 </div>
