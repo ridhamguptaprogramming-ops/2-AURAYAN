@@ -1,112 +1,91 @@
-// ============================================
-// ABOUT PAGE JAVASCRIPT
-// ============================================
+(function () {
+  function animateCounter(element) {
+    const rawValue = element.textContent.replace(/[^\d]/g, '');
+    const finalValue = Number.parseInt(rawValue, 10);
 
-// Initialize cart from localStorage
-function initializeCart() {
-  const cart = JSON.parse(localStorage.getItem('aurayanCart')) || [];
-  document.getElementById('cartCount').textContent = cart.length;
-}
-
-// Hamburger Menu Toggle
-const hamburger = document.getElementById('hamburger-menu');
-const navMenu = document.getElementById('nav-menu');
-
-hamburger.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-  hamburger.classList.toggle('active');
-});
-
-// Close menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    navMenu.classList.remove('active');
-    hamburger.classList.remove('active');
-  });
-});
-
-// Scroll animations for elements
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+    if (!Number.isFinite(finalValue)) {
+      return;
     }
-  });
-}, observerOptions);
 
-// Observe elements for animation
-document.querySelectorAll('.value-card, .sustainability-card, .award-item, .team-member').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  observer.observe(el);
-});
+    const duration = 1800;
+    const stepTime = 40;
+    const increment = finalValue / (duration / stepTime);
+    let current = 0;
 
-// Timeline item animations
-document.querySelectorAll('.timeline-content').forEach((el, index) => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  
-  setTimeout(() => {
-    el.style.opacity = '1';
-    el.style.transform = 'translateY(0)';
-  }, index * 100);
-});
-
-// Counter animation for commitment numbers
-function animateCounter(element) {
-  const finalValue = parseInt(element.textContent);
-  const duration = 2000;
-  const increment = finalValue / (duration / 50);
-  let currentValue = 0;
-
-  const counter = setInterval(() => {
-    currentValue += increment;
-    if (currentValue >= finalValue) {
-      element.textContent = finalValue;
-      clearInterval(counter);
-    } else {
-      element.textContent = Math.floor(currentValue);
-    }
-  }, 50);
-}
-
-// Trigger counter animation when in view
-const commitmentObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-      const numberElement = entry.target.querySelector('.commitment-number');
-      if (numberElement) {
-        animateCounter(numberElement);
-        entry.target.classList.add('animated');
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= finalValue) {
+        element.textContent = String(finalValue);
+        clearInterval(timer);
+        return;
       }
+      element.textContent = String(Math.floor(current));
+    }, stepTime);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -80px 0px'
+      }
+    );
+
+    document
+      .querySelectorAll('.value-card, .sustainability-card, .award-item, .team-member, .timeline-content')
+      .forEach((element) => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(element);
+      });
+
+    const commitmentObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting || entry.target.classList.contains('animated')) {
+            return;
+          }
+
+          const numberElement = entry.target.querySelector('.commitment-number');
+          if (numberElement) {
+            animateCounter(numberElement);
+            entry.target.classList.add('animated');
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    document.querySelectorAll('.commitment-item').forEach((item) => {
+      commitmentObserver.observe(item);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (event) => {
+        const targetSelector = anchor.getAttribute('href');
+        const target = document.querySelector(targetSelector);
+        if (!target) {
+          return;
+        }
+
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    if (window.AurayanSite && typeof window.AurayanSite.syncCartCount === 'function') {
+      window.AurayanSite.syncCartCount();
     }
   });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.commitment-item').forEach(el => {
-  commitmentObserver.observe(el);
-});
-
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {
-  initializeCart();
-});
-
-// Smooth scroll behavior for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
+})();
