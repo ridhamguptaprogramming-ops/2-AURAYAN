@@ -79,6 +79,90 @@
     });
   }
 
+  function normalizeQuantityInput(input) {
+    if (!input) {
+      return 1;
+    }
+
+    const min = Number.parseInt(input.min || '1', 10);
+    const max = Number.parseInt(input.max || '10', 10);
+    const raw = Number.parseInt(input.value || String(min), 10);
+
+    const safeMin = Number.isFinite(min) ? min : 1;
+    const safeMax = Number.isFinite(max) ? max : 10;
+    const safeValue = Number.isFinite(raw) ? raw : safeMin;
+    const clamped = Math.min(safeMax, Math.max(safeMin, safeValue));
+
+    input.value = String(clamped);
+    return clamped;
+  }
+
+  function setupQuantityControls() {
+    document.querySelectorAll('.qty-btn[data-qty-target]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const targetId = button.dataset.qtyTarget;
+        const input = targetId ? document.getElementById(targetId) : null;
+        if (!input) {
+          return;
+        }
+
+        const current = normalizeQuantityInput(input);
+        const direction = button.dataset.action === 'decrease' ? -1 : 1;
+        input.value = String(current + direction);
+        normalizeQuantityInput(input);
+      });
+    });
+
+    document.querySelectorAll('.qty-input').forEach((input) => {
+      input.addEventListener('change', () => {
+        normalizeQuantityInput(input);
+      });
+
+      input.addEventListener('blur', () => {
+        normalizeQuantityInput(input);
+      });
+    });
+  }
+
+  function setupStarterKitCart() {
+    const starterButtons = ['hero-kit-btn', 'add-starter-kit-btn'];
+    const feedback = document.getElementById('starter-kit-feedback');
+
+    function addStarterKit() {
+      if (!window.AurayanSite || typeof window.AurayanSite.addToCart !== 'function') {
+        if (feedback) {
+          feedback.textContent = 'Cart is unavailable right now. Please try again.';
+          feedback.className = 'starter-kit-feedback error';
+        }
+        return;
+      }
+
+      window.AurayanSite.addToCart(
+        {
+          id: 'starter-kit',
+          name: 'AURAYAN Starter Kit',
+          price: 1200,
+          image: '10.png',
+          description: 'Noor Elixir, Sultan Reserve, Infinite Aura'
+        },
+        1
+      );
+
+      if (feedback) {
+        feedback.textContent = 'Starter Kit added to cart.';
+        feedback.className = 'starter-kit-feedback success';
+      }
+    }
+
+    starterButtons.forEach((buttonId) => {
+      const button = document.getElementById(buttonId);
+      if (!button) {
+        return;
+      }
+      button.addEventListener('click', addStarterKit);
+    });
+  }
+
   function renderSearchResults(results, query) {
     const resultsContainer = document.getElementById('search-results');
     if (!resultsContainer) {
@@ -134,6 +218,8 @@
   document.addEventListener('DOMContentLoaded', () => {
     setupNewsletter();
     setupHeroActions();
+    setupQuantityControls();
+    setupStarterKitCart();
     setupSearchExperience();
 
     if (window.AurayanSite && typeof window.AurayanSite.syncCartCount === 'function') {

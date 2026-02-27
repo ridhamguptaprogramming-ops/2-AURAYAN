@@ -77,7 +77,6 @@
 <div class="nav-links" id="nav-menu">
 <a href="index.html" class="nav-link">Home</a>
 <a href="collection.html" class="nav-link">Collection</a>
-<a href="video.html" class="nav-link">Video</a>
 <a href="about.html" class="nav-link">About</a>
 <a href="contact.html" class="nav-link">Contact</a>
 </div>
@@ -132,6 +131,9 @@ Shop Collection
 </button>
 <button class="btn btn-secondary">
 Discover Aura
+</button>
+<button class="btn btn-primary btn-kit" id="hero-kit-btn">
+Add Starter Kit
 </button>
 </div>
 </div>
@@ -216,7 +218,12 @@ Discover Aura
 <span class="original-price">₹500</span>
 <span class="discount">-22%</span>
 </div>
-<button class="btn btn-add-cart" data-product="velvet-oud">Add to Cart</button>
+<div class="qty-control" aria-label="Select quantity for Noor Elixir">
+<button class="qty-btn" type="button" data-action="decrease" data-qty-target="qty-noor" aria-label="Decrease Noor Elixir quantity">-</button>
+<input id="qty-noor" class="qty-input" type="number" min="1" max="10" value="1" inputmode="numeric" aria-label="Noor Elixir quantity">
+<button class="qty-btn" type="button" data-action="increase" data-qty-target="qty-noor" aria-label="Increase Noor Elixir quantity">+</button>
+</div>
+<button class="btn btn-add-cart" data-product="velvet-oud" data-qty-input="qty-noor">Add to Cart</button>
 </div>
 </div>
 </article>
@@ -245,7 +252,12 @@ Discover Aura
 <span class="original-price">₹1000</span>
 <span class="discount">-21%</span>
 </div>
-<button class="btn btn-add-cart" data-product="imperial-rose">Add to Cart</button>
+<div class="qty-control" aria-label="Select quantity for Sultan Reserve Collection">
+<button class="qty-btn" type="button" data-action="decrease" data-qty-target="qty-sultan" aria-label="Decrease Sultan Reserve quantity">-</button>
+<input id="qty-sultan" class="qty-input" type="number" min="1" max="10" value="1" inputmode="numeric" aria-label="Sultan Reserve quantity">
+<button class="qty-btn" type="button" data-action="increase" data-qty-target="qty-sultan" aria-label="Increase Sultan Reserve quantity">+</button>
+</div>
+<button class="btn btn-add-cart" data-product="imperial-rose" data-qty-input="qty-sultan">Add to Cart</button>
 </div>
 </div>
 </article>
@@ -273,7 +285,12 @@ Discover Aura
 <span class="original-price">₹600</span>
 <span class="discount">-23%</span>
 </div>
-<button class="btn btn-add-cart" data-product="crown-amber">Add to Cart</button>
+<div class="qty-control" aria-label="Select quantity for Infinite Aura">
+<button class="qty-btn" type="button" data-action="decrease" data-qty-target="qty-infinite" aria-label="Decrease Infinite Aura quantity">-</button>
+<input id="qty-infinite" class="qty-input" type="number" min="1" max="10" value="1" inputmode="numeric" aria-label="Infinite Aura quantity">
+<button class="qty-btn" type="button" data-action="increase" data-qty-target="qty-infinite" aria-label="Increase Infinite Aura quantity">+</button>
+</div>
+<button class="btn btn-add-cart" data-product="crown-amber" data-qty-input="qty-infinite">Add to Cart</button>
 </div>
 </div>
 </article>
@@ -282,6 +299,16 @@ Discover Aura
 
 <div class="collection-footer">
 <a href="collection.html" class="view-all-link">View Full Collection →</a>
+</div>
+</section>
+
+<!-- QUICK CART BUNDLE -->
+<section class="quick-cart" aria-labelledby="quick-cart-title">
+<div class="quick-cart-card">
+<h2 id="quick-cart-title">Starter Cart Bundle</h2>
+<p>Get Noor Elixir, Sultan Reserve, and Infinite Aura in one click.</p>
+<button class="btn btn-primary btn-lg" id="add-starter-kit-btn">Add Starter Kit to Cart - ₹1,200</button>
+<p id="starter-kit-feedback" class="starter-kit-feedback" aria-live="polite"></p>
 </div>
 </section>
 
@@ -373,7 +400,7 @@ We believe fragrance is more than a scent—it's your invisible crown. It tells 
 <p class="testimonial-text">
 "AURAYAN is not just a fragrance, it's a statement. I've received more compliments with this than any other perfume I've owned."
 </p>
-<p class="testimonial-author">— Priya Sharma, Delhi</p>
+<p class="testimonial-author">— Priya Sharma </p>
 </div>
 
 <div class="testimonial-card">
@@ -381,7 +408,7 @@ We believe fragrance is more than a scent—it's your invisible crown. It tells 
 <p class="testimonial-text">
 "The longevity is incredible. I applied it in the morning and could still smell it at the end of the day. Worth every penny!"
 </p>
-<p class="testimonial-author">— Arun Patel, Mumbai</p>
+<p class="testimonial-author">— Arun Patel</p>
 </div>
 
 <div class="testimonial-card">
@@ -389,7 +416,7 @@ We believe fragrance is more than a scent—it's your invisible crown. It tells 
 <p class="testimonial-text">
 "Finally, a luxury fragrance that's designed for our climate. No chemical harshness, just pure elegance."
 </p>
-<p class="testimonial-author">— Anjali Singh, Bangalore</p>
+<p class="testimonial-author">— Anjali Singh</p>
 </div>
 </div>
 </section>
@@ -486,7 +513,6 @@ Shop Now
 <h4>Information</h4>
 <ul>
 <li><a href="about.html">About Us</a></li>
-<li><a href="video.html">Brand Video</a></li>
 <li><a href="blog.html">Blog</a></li>
 <li><a href="fragrance-guide.html">Fragrance Guide</a></li>
 <li><a href="Sustainability.html">Sustainability</a></li>
@@ -537,7 +563,13 @@ Shop Now
 <strong>Total:</strong>
 <span id="cart-total">₹0</span>
 </div>
-<button class="btn btn-primary btn-block">Checkout</button>
+<div class="cart-actions">
+<div class="cart-action-row">
+<button class="btn btn-cart-secondary" id="view-cart-btn">View Cart</button>
+<button class="btn btn-cart-secondary" id="clear-cart-btn">Clear Cart</button>
+</div>
+<button class="btn btn-primary btn-block" id="checkout-btn">Checkout</button>
+</div>
 </div>
 </div>
 

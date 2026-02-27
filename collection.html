@@ -23,7 +23,7 @@
             <div class="navbar-right">
                 <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
                 <button class="user-btn"><i class="fas fa-user"></i></button>
-                <a href="cart.html" class="icon-btn cart-btn" aria-label="Shopping cart">
+                <a href="cart.html" class="icon-btn cart-btn" aria-label="Shopping cart" id="cart-btn">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
         <circle cx="9" cy="21" r="1"></circle>
         <circle cx="20" cy="21" r="1"></circle>
@@ -322,10 +322,35 @@
         </div>
     </footer>
 
+    <div class="cart-sidebar" id="cart-sidebar" aria-hidden="true" aria-label="Shopping cart">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-btn" aria-label="Close cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <span id="cart-total">₹0</span>
+            </div>
+            <div class="cart-actions">
+                <div class="cart-action-row">
+                    <button class="btn btn-cart-secondary" id="view-cart-btn">View Cart</button>
+                    <button class="btn btn-cart-secondary" id="clear-cart-btn">Clear Cart</button>
+                </div>
+                <button class="btn btn-primary btn-block" id="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" aria-hidden="true"></div>
+
     <!-- Notification -->
     <div class="notification" id="notification"></div>
 
     <script src="site.js" defer></script>
-    <script src="collection.js"></script>
+    <script src="collection.js" defer></script>
 </body>
 </html>
