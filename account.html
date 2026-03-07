@@ -890,64 +890,6 @@ Phone: +91 98765 43210
 
 <!-- SCRIPTS -->
 <script src="site.js" defer></script>
-<script>
-// Account Page JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-  // Side menu navigation
-  const menuLinks = document.querySelectorAll('.account-menu .menu-link');
-  const contentSections = document.querySelectorAll('.content-section');
-
-  menuLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const sectionId = this.getAttribute('data-section');
-      
-      // Remove active class from all links and sections
-      menuLinks.forEach(l => l.classList.remove('active'));
-      contentSections.forEach(s => s.classList.remove('active'));
-      
-      // Add active class to clicked link and corresponding section
-      this.classList.add('active');
-      document.getElementById(sectionId).classList.add('active');
-    });
-  });
-
-  // Form submission handlers
-  const profileForm = document.getElementById('profile-form');
-  if (profileForm) {
-    profileForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Profile updated successfully!');
-    });
-  }
-
-  const settingsForm = document.getElementById('settings-form');
-  if (settingsForm) {
-    settingsForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Settings saved successfully!');
-    });
-  }
-
-  // Wishlist remove buttons
-  const removeButtons = document.querySelectorAll('.btn-remove');
-  removeButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
-      this.closest('.wishlist-item').remove();
-      if (document.querySelectorAll('.wishlist-item').length === 0) {
-        document.getElementById('wishlist-grid').innerHTML = '<p class="empty-message"><i class="fas fa-heart"></i><br>Your wishlist is empty</p>';
-      }
-    });
-  });
-
-  // Add to cart buttons
-  const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
-  addToCartButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
-      alert('Product added to cart!');
-    });
-  });
-});
-</script>
+<script src="account.js" defer></script>
 </body>
 </html>
