@@ -151,9 +151,6 @@ function handleLogout() {
       window.location.href = 'index.html';
     }, 1000);
   }
-      handleRemoveFromWishlist(this);
-    });
-  });
 }
 
 /**
@@ -223,19 +220,71 @@ function initializeAddressActions() {
 }
 
 /**
- * Handle adding product to cart
+ * Show address form
  */
-function handleAddToCart(button) {
-  const wishlistItem = button.closest('.wishlist-item');
-  const productName = wishlistItem.querySelector('h4').textContent;
-  const productPrice = wishlistItem.querySelector('.wishlist-item-price').textContent;
+function showAddressForm() {
+  const form = document.getElementById('new-address-form');
+  const btn = document.getElementById('add-address-btn');
+  form.style.display = 'block';
+  btn.style.display = 'none';
+}
 
-  // Get current cart count
-  const cartCount = document.getElementById('cart-count');
-  let count = parseInt(cartCount.textContent) || 0;
-  cartCount.textContent = count + 1;
+/**
+ * Hide address form
+ */
+function hideAddressForm() {
+  const form = document.getElementById('new-address-form');
+  const btn = document.getElementById('add-address-btn');
+  form.style.display = 'none';
+  btn.style.display = 'inline-block';
+  // Clear form
+  document.getElementById('address-form').reset();
+}
 
-  showNotification(`${productName} (${productPrice}) added to cart!`, 'success');
+/**
+ * Handle address form submission
+ */
+function handleAddressSubmit() {
+  const addressType = document.getElementById('address-type').value;
+  const fullName = document.getElementById('full-name').value.trim();
+  const streetAddress = document.getElementById('street-address').value.trim();
+  const city = document.getElementById('city').value.trim();
+  const state = document.getElementById('state').value.trim();
+  const zipCode = document.getElementById('zip-code').value.trim();
+  const country = document.getElementById('country').value;
+  const phone = document.getElementById('address-phone').value.trim();
+
+  // Validation
+  if (!addressType || !fullName || !streetAddress || !city || !state || !zipCode || !country || !phone) {
+    showNotification('Please fill in all required fields', 'error');
+    return;
+  }
+
+  // Create new address element
+  const addressesContainer = document.getElementById('addresses-container');
+  const newAddress = document.createElement('div');
+  newAddress.style.cssText = 'background: #f9f7f4; padding: 20px; border-radius: 8px; margin-bottom: 15px;';
+  newAddress.innerHTML = `
+    <div style="display: flex; justify-content: space-between; align-items: start;">
+      <div>
+        <h4 style="margin: 0 0 10px 0; color: #1a1a1a;">${addressType.charAt(0).toUpperCase() + addressType.slice(1)} Address</h4>
+        <p style="margin: 0; color: #666; line-height: 1.6;">
+          ${streetAddress}<br>
+          ${city}, ${state} ${zipCode}<br>
+          ${country}<br>
+          Phone: ${phone}
+        </p>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <button style="background: #C6A14A; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">Edit</button>
+        <button style="background: #f0f0f0; color: #666; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;" onclick="this.closest('div').remove(); showNotification('Address deleted', 'success');">Delete</button>
+      </div>
+    </div>
+  `;
+
+  addressesContainer.appendChild(newAddress);
+  hideAddressForm();
+  showNotification('Address added successfully!', 'success');
 }
 
 /**
