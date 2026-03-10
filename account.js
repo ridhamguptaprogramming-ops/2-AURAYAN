@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeFormHandlers();
   initializeWishlistActions();
   initializeCartActions();
+  initializeAddressActions();
 });
 
 /**
@@ -50,12 +51,22 @@ function initializeFormHandlers() {
       handleSettingsSubmit();
     });
   }
+
+  // Logout button handler
+  const logoutBtn = document.getElementById('logout-btn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      handleLogout();
+    });
+  }
 }
 
 /**
  * Handle profile form submission
  */
 function handleProfileSubmit() {
+  const submitBtn = document.querySelector('#profile-form .btn-save');
   const firstName = document.getElementById('first-name').value.trim();
   const lastName = document.getElementById('last-name').value.trim();
   const email = document.getElementById('email').value.trim();
@@ -71,16 +82,23 @@ function handleProfileSubmit() {
     return;
   }
 
+  // Show loading state
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Saving...';
+
   // Simulate API call
   setTimeout(() => {
     showNotification('Profile updated successfully!', 'success');
-  }, 500);
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Save Changes';
+  }, 1000);
 }
 
 /**
  * Handle settings form submission
  */
 function handleSettingsSubmit() {
+  const submitBtn = document.querySelector('#settings-form .btn-save');
   const currentPassword = document.getElementById('current-password').value;
   const newPassword = document.getElementById('new-password').value;
   const confirmPassword = document.getElementById('confirm-password').value;
@@ -103,24 +121,36 @@ function handleSettingsSubmit() {
     }
   }
 
+  // Show loading state
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Saving...';
+
   // Simulate API call
   setTimeout(() => {
     showNotification('Settings saved successfully!', 'success');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Save Settings';
     // Clear password fields
     document.getElementById('current-password').value = '';
     document.getElementById('new-password').value = '';
     document.getElementById('confirm-password').value = '';
-  }, 500);
+  }, 1000);
 }
 
 /**
- * Initialize wishlist actions
+ * Handle logout
  */
-function initializeWishlistActions() {
-  const removeButtons = document.querySelectorAll('.btn-remove');
-  removeButtons.forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
+function handleLogout() {
+  if (confirm('Are you sure you want to logout?')) {
+    // Clear user data from localStorage
+    localStorage.removeItem('userData');
+    // Simulate logout
+    showNotification('Logged out successfully!', 'success');
+    // Redirect to home page after a short delay
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 1000);
+  }
       handleRemoveFromWishlist(this);
     });
   });
@@ -160,6 +190,36 @@ function initializeCartActions() {
       handleAddToCart(this);
     });
   });
+}
+
+/**
+ * Initialize address actions
+ */
+function initializeAddressActions() {
+  const addAddressBtn = document.getElementById('add-address-btn');
+  const cancelAddressBtn = document.getElementById('cancel-address');
+  const addressForm = document.getElementById('address-form');
+
+  if (addAddressBtn) {
+    addAddressBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      showAddressForm();
+    });
+  }
+
+  if (cancelAddressBtn) {
+    cancelAddressBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      hideAddressForm();
+    });
+  }
+
+  if (addressForm) {
+    addressForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      handleAddressSubmit();
+    });
+  }
 }
 
 /**

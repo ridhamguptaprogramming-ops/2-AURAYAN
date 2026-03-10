@@ -625,6 +625,7 @@
 
 <div class="button-group">
 <button type="submit" class="btn-save">Save Changes</button>
+<button type="button" class="btn-logout" id="logout-btn">Logout</button>
 </div>
 </form>
 </div>
@@ -713,7 +714,7 @@
 <!-- ADDRESSES SECTION -->
 <section id="addresses" class="content-section">
 <h3>Saved Addresses</h3>
-<div style="margin-bottom: 30px;">
+<div id="addresses-container">
 <div style="background: #f9f7f4; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
 <div style="display: flex; justify-content: space-between; align-items: start;">
 <div>
@@ -731,9 +732,67 @@ Phone: +91 98765 43210
 </div>
 </div>
 </div>
-
-<button style="background: #C6A14A; color: white; padding: 12px 30px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; font-weight: 600;">+ Add New Address</button>
 </div>
+
+<!-- Add New Address Form (Hidden by default) -->
+<div id="new-address-form" style="display: none; background: #f9f7f4; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+<h4 style="margin: 0 0 20px 0; color: #1a1a1a;">Add New Address</h4>
+<form id="address-form">
+<div class="profile-info">
+<div class="form-group">
+<label for="address-type">Address Type</label>
+<select id="address-type" required>
+<option value="">Select type</option>
+<option value="home">Home</option>
+<option value="work">Work</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="form-group">
+<label for="full-name">Full Name</label>
+<input type="text" id="full-name" placeholder="Enter full name" required>
+</div>
+</div>
+<div class="form-group">
+<label for="street-address">Street Address</label>
+<input type="text" id="street-address" placeholder="Enter street address" required>
+</div>
+<div class="profile-info">
+<div class="form-group">
+<label for="city">City</label>
+<input type="text" id="city" placeholder="Enter city" required>
+</div>
+<div class="form-group">
+<label for="state">State</label>
+<input type="text" id="state" placeholder="Enter state" required>
+</div>
+</div>
+<div class="profile-info">
+<div class="form-group">
+<label for="zip-code">ZIP Code</label>
+<input type="text" id="zip-code" placeholder="Enter ZIP code" required>
+</div>
+<div class="form-group">
+<label for="country">Country</label>
+<select id="country" required>
+<option value="India">India</option>
+<option value="USA">USA</option>
+<option value="UK">UK</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label for="address-phone">Phone Number</label>
+<input type="tel" id="address-phone" placeholder="Enter phone number" required>
+</div>
+<div class="button-group">
+<button type="submit" class="btn-save">Save Address</button>
+<button type="button" class="btn-logout" id="cancel-address">Cancel</button>
+</div>
+</form>
+</div>
+
+<button style="background: #C6A14A; color: white; padding: 12px 30px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; font-weight: 600;" id="add-address-btn">+ Add New Address</button>
 </section>
 
 <!-- SETTINGS SECTION -->
