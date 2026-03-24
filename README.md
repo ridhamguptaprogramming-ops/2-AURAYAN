@@ -33,7 +33,7 @@ This repository serves as the foundation for building scalable and efficient sol
 
 The logo represents the identity of **AURAYAN**:
 
-![Preview](./AURAYAN%20logo%20make.jpg)
+![Preview](./1.mp4)
 
 ## ⚙️ Installation & Setup
 
