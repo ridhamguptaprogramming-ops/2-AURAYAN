@@ -12,6 +12,7 @@ This repository serves as the foundation for building scalable and efficient sol
 ```
 2-AURAYAN/
 │── AURAYAN logo make.jpg   # Project Logo
+│── 1.mp4                   # Preview Video
 │── README.md               # Project Documentation
 │── (your source files)     # Add your code here
 ```
@@ -25,28 +26,27 @@ This repository serves as the foundation for building scalable and efficient sol
 
 ## 🛠️ Technologies Used
 
-* (Add your tech stack here, e.g.)
 * HTML / CSS / JavaScript
 * C++ / Java / Python (if applicable)
 
-## 📸 Preview
+### 🎥 Demo Video
 
-The logo represents the identity of **AURAYAN**:
-
-![Preview](./1.mp4)
+👉 [Click here to watch the demo](./1.mp4)
 
 ## ⚙️ Installation & Setup
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/ridhamguptaprogramming-ops/2-AURAYAN.git
-   ```
+```bash
+git clone https://github.com/ridhamguptaprogramming-ops/2-AURAYAN.git
+```
+
 2. Navigate to the project folder:
 
-   ```bash
-   cd 2-AURAYAN
-   ```
+```bash
+cd 2-AURAYAN
+```
+
 3. Run or open files as per your project type.
 
 ## 🤝 Contributing
@@ -65,3 +65,4 @@ This project is open-source and available under the **MIT License**.
 ---
 
 ⭐ If you like this project, don’t forget to star the repository!
+
